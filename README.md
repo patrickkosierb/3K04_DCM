@@ -1,4 +1,4 @@
-# 3K04_DCM
+# Group 19 is omega
 
 #### Device Controller-Monitor for pacemaker
 
