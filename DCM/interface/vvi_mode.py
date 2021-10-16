@@ -203,7 +203,7 @@ class Ui_Dialog(object):
         self.vvi.setGeometry(QtCore.QRect(15, 440, 351, 51))
         self.vvi.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 255, 216);\n"
+"background-color: rgb(0, 255, 150);\n"
 "font: 12pt \"Arial\";")
         self.vvi.setObjectName("vvi")
         self.LRL = QtWidgets.QLineEdit(self.bgwidget)

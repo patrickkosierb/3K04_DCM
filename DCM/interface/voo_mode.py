@@ -166,7 +166,7 @@ class Ui_Dialog(object):
         self.voo.setGeometry(QtCore.QRect(15, 340, 351, 51))
         self.voo.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 255, 216);\n"
+"background-color: rgb(0, 255, 150);\n"
 "font: 12pt \"Arial\";")
         self.voo.setObjectName("voo")
         self.vvi = QtWidgets.QPushButton(self.bgwidget)

@@ -125,7 +125,7 @@ class Ui_Dialog(object):
         self.aai.setGeometry(QtCore.QRect(15, 240, 351, 51))
         self.aai.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 255, 216);\n"
+"background-color: rgb(0, 255, 150);\n"
 "font: 12pt \"Arial\";")
         self.aai.setObjectName("aai")
         self.LRL_Current = QtWidgets.QLabel(self.bgwidget)

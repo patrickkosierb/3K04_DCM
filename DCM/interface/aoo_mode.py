@@ -137,7 +137,7 @@ class Ui_Dialog(object):
         self.aoo.setGeometry(QtCore.QRect(15, 140, 351, 51))
         self.aoo.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 255, 216);\n"
+"background-color: rgb(0, 255, 150);\n"
 "font: 12pt \"Arial\";")
         self.aoo.setObjectName("aoo")
         self.logout = QtWidgets.QPushButton(self.bgwidget)
