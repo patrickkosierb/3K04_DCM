@@ -42,7 +42,7 @@ class aoo_mode(QDialog):
 		elif(LRL == ""):
 			self.INVALID.setText("")
 		else:
-			self.INVALID.setText("Invalid")
+			self.INVALID.setText("Invalid*")
 
 		URL = self.URL.text()
 		if(URL.isdigit() and int(URL)<255):
@@ -51,7 +51,7 @@ class aoo_mode(QDialog):
 		elif(URL == ""):
 			self.INVALID_2.setText("")
 		else:
-			self.INVALID_2.setText("Invalid")
+			self.INVALID_2.setText("Invalid*")
 
 		AA = self.AA.text()
 		if(AA.isdigit() and int(AA)<255):
@@ -60,7 +60,7 @@ class aoo_mode(QDialog):
 		elif(AA == ""):
 			self.INVALID_3.setText("")		
 		else:
-			self.INVALID_3.setText("Invalid")
+			self.INVALID_3.setText("Invalid*")
 
 		APW = self.APW.text()
 		if(APW.isdigit() and int(APW)<255):
@@ -69,10 +69,11 @@ class aoo_mode(QDialog):
 		elif(APW == ""):
 			self.INVALID_4.setText("")		
 		else:
-			self.INVALID_4.setText("Invalid")
+			self.INVALID_4.setText("Invalid*")
 
 	def reset_param(self):
 		#access text file again
+		# add if statement or "i have reviewed my changes"
 		param = ['150', '200', '100']
 		self.LRL_Current.setText(param[0]) #since the variables are directly from a txt file we dont need to convert int -> str
 		self.URL_Current.setText(param[1])
@@ -80,9 +81,16 @@ class aoo_mode(QDialog):
 
 	#take current and update text file
 	def send_to_pm(self):
-		param = ['150', '200', '100'] 
-		param[0] = self.LRL_Current.text()
-		print(param)
+		if(self.checkBox.isChecked()):
+			self.checkBox.setChecked(False)
+			self.INVALID_5.setText("")
+			param = ['150', '200', '100'] 
+			param[0] = self.LRL_Current.text()
+			param[1] = self.URL_Current.text()
+			param[2] = self.AA_Current.text()
+			print(param)
+		else:
+			self.INVALID_5.setText("*Please confirm changes")
 
 class aai_mode(QDialog):
 	def __init__(self):
@@ -118,7 +126,7 @@ class aai_mode(QDialog):
 		elif(LRL == ""):
 			self.INVALID.setText("")
 		else:
-			self.INVALID.setText("Invalid")
+			self.INVALID.setText("Invalid*")
 
 		URL = self.URL.text()
 		if(URL.isdigit() and int(URL)<255):
@@ -127,7 +135,7 @@ class aai_mode(QDialog):
 		elif(URL == ""):
 			self.INVALID_2.setText("")
 		else:
-			self.INVALID_2.setText("Invalid")
+			self.INVALID_2.setText("Invalid*")
 
 		AA = self.AA.text()
 		if(AA.isdigit() and int(AA)<255):
@@ -136,7 +144,7 @@ class aai_mode(QDialog):
 		elif(AA == ""):
 			self.INVALID_3.setText("")		
 		else:
-			self.INVALID_3.setText("Invalid")
+			self.INVALID_3.setText("Invalid*")
 
 		APW = self.APW.text()
 		if(APW.isdigit() and int(APW)<255):
@@ -145,7 +153,7 @@ class aai_mode(QDialog):
 		elif(APW == ""):
 			self.INVALID_4.setText("")		
 		else:
-			self.INVALID_4.setText("Invalid")
+			self.INVALID_4.setText("Invalid*")
 
 		AS = self.AS.text()
 		if(AS.isdigit() and int(AS)<255):
@@ -154,7 +162,7 @@ class aai_mode(QDialog):
 		elif(AS == ""):
 			self.INVALID_5.setText("")		
 		else:
-			self.INVALID_5.setText("Invalid")
+			self.INVALID_5.setText("Invalid*")
 
 		ARP = self.ARP.text()
 		if(ARP.isdigit() and int(ARP)<255):
@@ -163,7 +171,7 @@ class aai_mode(QDialog):
 		elif(ARP == ""):
 			self.INVALID_6.setText("")		
 		else:
-			self.INVALID_6.setText("Invalid")
+			self.INVALID_6.setText("Invalid*")
 
 		PVARP = self.PVARP.text()
 		if(PVARP.isdigit() and int(PVARP)<255):
@@ -172,7 +180,7 @@ class aai_mode(QDialog):
 		elif(PVARP == ""):
 			self.INVALID_7.setText("")		
 		else:
-			self.INVALID_7.setText("Invalid")
+			self.INVALID_7.setText("Invalid*")
 
 	#access text file again if "send_to_pm" was not called then the parameters in .txt will
 	def reset_param(self):
@@ -183,6 +191,13 @@ class aai_mode(QDialog):
 
 	#take current and update text file
 	def send_to_pm(self):
-		param = ['150', '200', '100'] 
-		param[0] = self.LRL_Current.text()
-		print(param)
+		if(self.checkBox.isChecked()):
+			self.checkBox.setChecked(False)
+			self.INVALID_8.setText("")
+			param = ['150', '200', '100'] 
+			param[0] = self.LRL_Current.text()
+			param[1] = self.URL_Current.text()
+			param[2] = self.AA_Current.text()
+			print(param)
+		else:
+			self.INVALID_8.setText("*Please confirm changes")

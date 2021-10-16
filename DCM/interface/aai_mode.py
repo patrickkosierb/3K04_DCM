@@ -118,7 +118,7 @@ class Ui_Dialog(object):
 "font: 12pt \"Arial\";")
         self.ResetChanges.setObjectName("ResetChanges")
         self.checkBox = QtWidgets.QCheckBox(self.bgwidget)
-        self.checkBox.setGeometry(QtCore.QRect(420, 705, 231, 20))
+        self.checkBox.setGeometry(QtCore.QRect(420, 705, 201, 20))
         self.checkBox.setStyleSheet("color: rgb(255,255,255)")
         self.checkBox.setObjectName("checkBox")
         self.aai = QtWidgets.QPushButton(self.bgwidget)
@@ -281,6 +281,12 @@ class Ui_Dialog(object):
 "background-color: rgb(0, 155, 0);\n"
 "font: 12pt \"Arial\";")
         self.update_pm.setObjectName("update_pm")
+        self.INVALID_8 = QtWidgets.QLabel(self.bgwidget)
+        self.INVALID_8.setGeometry(QtCore.QRect(610, 700, 181, 31))
+        self.INVALID_8.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
+"")
+        self.INVALID_8.setText("")
+        self.INVALID_8.setObjectName("INVALID_8")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
