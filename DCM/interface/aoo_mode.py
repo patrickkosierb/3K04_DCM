@@ -230,6 +230,13 @@ class Ui_Dialog(object):
 "")
         self.INVALID_5.setText("")
         self.INVALID_5.setObjectName("INVALID_5")
+        self.Back = QtWidgets.QPushButton(self.bgwidget)
+        self.Back.setGeometry(QtCore.QRect(15, 730, 351, 51))
+        self.Back.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 216, 216);\n"
+"font: 12pt \"Arial\";")
+        self.Back.setObjectName("Back")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -259,6 +266,7 @@ class Ui_Dialog(object):
         self.voo.setText(_translate("Dialog", "VOO Mode"))
         self.vvi.setText(_translate("Dialog", "VVI Mode"))
         self.update_pm.setText(_translate("Dialog", "Upload to Pacemaker"))
+        self.Back.setText(_translate("Dialog", " Back to Main Menu"))
 
 
 if __name__ == "__main__":

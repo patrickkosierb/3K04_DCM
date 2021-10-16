@@ -40,7 +40,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Atrium Pacing Mode(AOO)</string>
+     <string>Ventricle Sense Mode(VVI)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -111,7 +111,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_6">
+   <widget class="QLabel" name="lol">
     <property name="geometry">
      <rect>
       <x>430</x>
@@ -150,7 +150,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>350</y>
-      <width>141</width>
+      <width>171</width>
       <height>41</height>
      </rect>
     </property>
@@ -159,7 +159,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Atrial Amplitude</string>
+     <string>Ventricle Amplitude</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">
@@ -167,7 +167,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>425</y>
-      <width>161</width>
+      <width>191</width>
       <height>41</height>
      </rect>
     </property>
@@ -176,7 +176,58 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Atrial Pulse Width</string>
+     <string>Ventricle Pulse Width</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>575</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Ventricle Refractory Period</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>500</y>
+      <width>171</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Ventricle Sensitivity</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_12">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>640</y>
+      <width>371</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Post Ventricle Atrial Refractory Period</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -282,7 +333,7 @@ font: 12pt &quot;Arial&quot;;</string>
      <rect>
       <x>420</x>
       <y>705</y>
-      <width>191</width>
+      <width>201</width>
       <height>20</height>
      </rect>
     </property>
@@ -346,7 +397,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="AA_Current">
+   <widget class="QLabel" name="VV_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -363,11 +414,62 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="APW_Current">
+   <widget class="QLabel" name="VPW_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
       <y>435</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255,255,255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="VS_Current">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>510</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255,255,255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="VRP_Current">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>585</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255,255,255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="PVARP_Current">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>660</y>
       <width>71</width>
       <height>21</height>
      </rect>
@@ -514,7 +616,7 @@ font: 12pt &quot;Arial&quot;;</string>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="AA">
+   <widget class="QLineEdit" name="VV">
     <property name="geometry">
      <rect>
       <x>1050</x>
@@ -524,11 +626,41 @@ font: 12pt &quot;Arial&quot;;</string>
      </rect>
     </property>
    </widget>
-   <widget class="QLineEdit" name="APW">
+   <widget class="QLineEdit" name="VPW">
     <property name="geometry">
      <rect>
       <x>1050</x>
       <y>435</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="VS">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>510</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="VRP">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>585</y>
+      <width>51</width>
+      <height>22</height>
+     </rect>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="PVARP">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>660</y>
       <width>51</width>
       <height>22</height>
      </rect>
@@ -573,7 +705,7 @@ font: 12pt &quot;Arial&quot;;</string>
      <rect>
       <x>960</x>
       <y>360</y>
-      <width>61</width>
+      <width>81</width>
       <height>31</height>
      </rect>
     </property>
@@ -590,6 +722,57 @@ font: 12pt &quot;Arial&quot;;</string>
      <rect>
       <x>960</x>
       <y>435</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="INVALID_5">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>510</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="INVALID_6">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>585</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="INVALID_7">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>660</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -634,12 +817,12 @@ font: 12pt &quot;Arial&quot;;</string>
      <string>Upload to Pacemaker</string>
     </property>
    </widget>
-   <widget class="QLabel" name="INVALID_5">
+   <widget class="QLabel" name="INVALID_8">
     <property name="geometry">
      <rect>
       <x>610</x>
       <y>700</y>
-      <width>241</width>
+      <width>181</width>
       <height>31</height>
      </rect>
     </property>

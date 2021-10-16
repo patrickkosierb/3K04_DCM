@@ -1,3 +1,7 @@
+# @ file: main.py
+# @ brief: main file runs welcome screen, begins state flow
+
+
 import sys
 import os
 import string

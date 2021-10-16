@@ -25,25 +25,18 @@ class Ui_Dialog(object):
         self.label.setStyleSheet("font: 20pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label.setObjectName("label")
-        self.aoo = QtWidgets.QPushButton(self.bgwidget)
-        self.aoo.setGeometry(QtCore.QRect(10, 170, 351, 51))
-        self.aoo.setStyleSheet("border-radius: 20px;\n"
+        self.modes = QtWidgets.QPushButton(self.bgwidget)
+        self.modes.setGeometry(QtCore.QRect(10, 170, 351, 51))
+        self.modes.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
 "background-color: rgb(255, 255, 216);\n"
 "font: 12pt \"Arial\";")
-        self.aoo.setObjectName("aoo")
+        self.modes.setObjectName("modes")
         self.line_2 = QtWidgets.QFrame(self.bgwidget)
         self.line_2.setGeometry(QtCore.QRect(370, -10, 21, 861))
         self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
         self.line_2.setObjectName("line_2")
-        self.aai = QtWidgets.QPushButton(self.bgwidget)
-        self.aai.setGeometry(QtCore.QRect(10, 250, 351, 51))
-        self.aai.setStyleSheet("border-radius: 20px;\n"
-"color: rgb(0,0,0);\n"
-"background-color: rgb(255, 255, 216);\n"
-"font: 12pt \"Arial\";")
-        self.aai.setObjectName("aai")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -52,8 +45,7 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "Main Menu"))
-        self.aoo.setText(_translate("Dialog", "AOO Mode"))
-        self.aai.setText(_translate("Dialog", "AAI Mode"))
+        self.modes.setText(_translate("Dialog", "Modes"))
 
 
 if __name__ == "__main__":

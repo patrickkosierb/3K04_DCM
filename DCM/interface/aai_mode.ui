@@ -227,7 +227,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Post Ventrical Atrial Refractory Period</string>
+     <string>Post Ventricle Atrial Refractory Period</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -832,6 +832,25 @@ font: 12pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="Back">
+    <property name="geometry">
+     <rect>
+      <x>15</x>
+      <y>730</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 216, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string> Back to Main Menu</string>
     </property>
    </widget>
   </widget>

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'aai_mode.ui'
+# Form implementation generated from reading ui file 'voo_mode.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -21,7 +21,7 @@ class Ui_Dialog(object):
 "background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgba(0, 85, 9, 255), stop:1 rgba(255, 147, 147, 255));}")
         self.bgwidget.setObjectName("bgwidget")
         self.label = QtWidgets.QLabel(self.bgwidget)
-        self.label.setGeometry(QtCore.QRect(420, 0, 481, 111))
+        self.label.setGeometry(QtCore.QRect(420, 0, 511, 111))
         self.label.setStyleSheet("font: 24pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label.setObjectName("label")
@@ -48,41 +48,26 @@ class Ui_Dialog(object):
 "")
         self.pacemaker_number.setText("")
         self.pacemaker_number.setObjectName("pacemaker_number")
-        self.lol = QtWidgets.QLabel(self.bgwidget)
-        self.lol.setGeometry(QtCore.QRect(430, 200, 161, 41))
-        self.lol.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label_6 = QtWidgets.QLabel(self.bgwidget)
+        self.label_6.setGeometry(QtCore.QRect(430, 200, 161, 41))
+        self.label_6.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
-        self.lol.setObjectName("lol")
+        self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.bgwidget)
         self.label_7.setGeometry(QtCore.QRect(430, 275, 151, 51))
         self.label_7.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.bgwidget)
-        self.label_8.setGeometry(QtCore.QRect(430, 350, 141, 41))
+        self.label_8.setGeometry(QtCore.QRect(430, 350, 171, 41))
         self.label_8.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.bgwidget)
-        self.label_9.setGeometry(QtCore.QRect(430, 425, 161, 41))
+        self.label_9.setGeometry(QtCore.QRect(430, 425, 191, 41))
         self.label_9.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_9.setObjectName("label_9")
-        self.label_10 = QtWidgets.QLabel(self.bgwidget)
-        self.label_10.setGeometry(QtCore.QRect(430, 575, 211, 41))
-        self.label_10.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
-"")
-        self.label_10.setObjectName("label_10")
-        self.label_11 = QtWidgets.QLabel(self.bgwidget)
-        self.label_11.setGeometry(QtCore.QRect(430, 500, 151, 41))
-        self.label_11.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
-"")
-        self.label_11.setObjectName("label_11")
-        self.label_12 = QtWidgets.QLabel(self.bgwidget)
-        self.label_12.setGeometry(QtCore.QRect(430, 640, 341, 61))
-        self.label_12.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
-"")
-        self.label_12.setObjectName("label_12")
         self.label_13 = QtWidgets.QLabel(self.bgwidget)
         self.label_13.setGeometry(QtCore.QRect(810, 100, 451, 111))
         self.label_13.setStyleSheet("font: 14pt \"Arial\"; color:rgb(255, 255, 255)\n"
@@ -118,7 +103,7 @@ class Ui_Dialog(object):
 "font: 12pt \"Arial\";")
         self.ResetChanges.setObjectName("ResetChanges")
         self.checkBox = QtWidgets.QCheckBox(self.bgwidget)
-        self.checkBox.setGeometry(QtCore.QRect(420, 705, 201, 20))
+        self.checkBox.setGeometry(QtCore.QRect(420, 705, 191, 20))
         self.checkBox.setStyleSheet("color: rgb(255,255,255)")
         self.checkBox.setObjectName("checkBox")
         self.aai = QtWidgets.QPushButton(self.bgwidget)
@@ -138,31 +123,16 @@ class Ui_Dialog(object):
         self.URL_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
         self.URL_Current.setObjectName("URL_Current")
-        self.AA_Current = QtWidgets.QLabel(self.bgwidget)
-        self.AA_Current.setGeometry(QtCore.QRect(840, 360, 71, 21))
-        self.AA_Current.setStyleSheet("color: rgb(255,255,255);\n"
+        self.VV_Current = QtWidgets.QLabel(self.bgwidget)
+        self.VV_Current.setGeometry(QtCore.QRect(840, 360, 71, 21))
+        self.VV_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.AA_Current.setObjectName("AA_Current")
-        self.APW_Current = QtWidgets.QLabel(self.bgwidget)
-        self.APW_Current.setGeometry(QtCore.QRect(840, 435, 71, 21))
-        self.APW_Current.setStyleSheet("color: rgb(255,255,255);\n"
+        self.VV_Current.setObjectName("VV_Current")
+        self.VPW_Current = QtWidgets.QLabel(self.bgwidget)
+        self.VPW_Current.setGeometry(QtCore.QRect(840, 435, 71, 21))
+        self.VPW_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.APW_Current.setObjectName("APW_Current")
-        self.AS_Current = QtWidgets.QLabel(self.bgwidget)
-        self.AS_Current.setGeometry(QtCore.QRect(840, 510, 71, 21))
-        self.AS_Current.setStyleSheet("color: rgb(255,255,255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
-        self.AS_Current.setObjectName("AS_Current")
-        self.ARP_Current = QtWidgets.QLabel(self.bgwidget)
-        self.ARP_Current.setGeometry(QtCore.QRect(840, 585, 71, 21))
-        self.ARP_Current.setStyleSheet("color: rgb(255,255,255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
-        self.ARP_Current.setObjectName("ARP_Current")
-        self.PVARP_Current = QtWidgets.QLabel(self.bgwidget)
-        self.PVARP_Current.setGeometry(QtCore.QRect(840, 660, 71, 21))
-        self.PVARP_Current.setStyleSheet("color: rgb(255,255,255);\n"
-"font: 12pt \"MS Shell Dlg 2\";")
-        self.PVARP_Current.setObjectName("PVARP_Current")
+        self.VPW_Current.setObjectName("VPW_Current")
         self.aoo = QtWidgets.QPushButton(self.bgwidget)
         self.aoo.setGeometry(QtCore.QRect(15, 140, 351, 51))
         self.aoo.setStyleSheet("border-radius: 20px;\n"
@@ -212,21 +182,12 @@ class Ui_Dialog(object):
         self.URL = QtWidgets.QLineEdit(self.bgwidget)
         self.URL.setGeometry(QtCore.QRect(1050, 285, 51, 22))
         self.URL.setObjectName("URL")
-        self.AA = QtWidgets.QLineEdit(self.bgwidget)
-        self.AA.setGeometry(QtCore.QRect(1050, 360, 51, 22))
-        self.AA.setObjectName("AA")
-        self.APW = QtWidgets.QLineEdit(self.bgwidget)
-        self.APW.setGeometry(QtCore.QRect(1050, 435, 51, 22))
-        self.APW.setObjectName("APW")
-        self.AS = QtWidgets.QLineEdit(self.bgwidget)
-        self.AS.setGeometry(QtCore.QRect(1050, 510, 51, 22))
-        self.AS.setObjectName("AS")
-        self.ARP = QtWidgets.QLineEdit(self.bgwidget)
-        self.ARP.setGeometry(QtCore.QRect(1050, 585, 51, 22))
-        self.ARP.setObjectName("ARP")
-        self.PVARP = QtWidgets.QLineEdit(self.bgwidget)
-        self.PVARP.setGeometry(QtCore.QRect(1050, 660, 51, 22))
-        self.PVARP.setObjectName("PVARP")
+        self.VV = QtWidgets.QLineEdit(self.bgwidget)
+        self.VV.setGeometry(QtCore.QRect(1050, 360, 51, 22))
+        self.VV.setObjectName("VV")
+        self.VPW = QtWidgets.QLineEdit(self.bgwidget)
+        self.VPW.setGeometry(QtCore.QRect(1050, 435, 51, 22))
+        self.VPW.setObjectName("VPW")
         self.INVALID = QtWidgets.QLabel(self.bgwidget)
         self.INVALID.setGeometry(QtCore.QRect(960, 210, 81, 31))
         self.INVALID.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
@@ -240,7 +201,7 @@ class Ui_Dialog(object):
         self.INVALID_2.setText("")
         self.INVALID_2.setObjectName("INVALID_2")
         self.INVALID_3 = QtWidgets.QLabel(self.bgwidget)
-        self.INVALID_3.setGeometry(QtCore.QRect(960, 360, 81, 31))
+        self.INVALID_3.setGeometry(QtCore.QRect(960, 360, 61, 31))
         self.INVALID_3.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
 "")
         self.INVALID_3.setText("")
@@ -251,24 +212,6 @@ class Ui_Dialog(object):
 "")
         self.INVALID_4.setText("")
         self.INVALID_4.setObjectName("INVALID_4")
-        self.INVALID_5 = QtWidgets.QLabel(self.bgwidget)
-        self.INVALID_5.setGeometry(QtCore.QRect(960, 510, 81, 31))
-        self.INVALID_5.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
-"")
-        self.INVALID_5.setText("")
-        self.INVALID_5.setObjectName("INVALID_5")
-        self.INVALID_6 = QtWidgets.QLabel(self.bgwidget)
-        self.INVALID_6.setGeometry(QtCore.QRect(960, 585, 81, 31))
-        self.INVALID_6.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
-"")
-        self.INVALID_6.setText("")
-        self.INVALID_6.setObjectName("INVALID_6")
-        self.INVALID_7 = QtWidgets.QLabel(self.bgwidget)
-        self.INVALID_7.setGeometry(QtCore.QRect(960, 660, 81, 31))
-        self.INVALID_7.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
-"")
-        self.INVALID_7.setText("")
-        self.INVALID_7.setObjectName("INVALID_7")
         self.line_3 = QtWidgets.QFrame(self.bgwidget)
         self.line_3.setGeometry(QtCore.QRect(380, 690, 981, 20))
         self.line_3.setFrameShape(QtWidgets.QFrame.HLine)
@@ -281,12 +224,12 @@ class Ui_Dialog(object):
 "background-color: rgb(0, 155, 0);\n"
 "font: 12pt \"Arial\";")
         self.update_pm.setObjectName("update_pm")
-        self.INVALID_8 = QtWidgets.QLabel(self.bgwidget)
-        self.INVALID_8.setGeometry(QtCore.QRect(610, 700, 181, 31))
-        self.INVALID_8.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
+        self.INVALID_5 = QtWidgets.QLabel(self.bgwidget)
+        self.INVALID_5.setGeometry(QtCore.QRect(610, 700, 241, 31))
+        self.INVALID_5.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
 "")
-        self.INVALID_8.setText("")
-        self.INVALID_8.setObjectName("INVALID_8")
+        self.INVALID_5.setText("")
+        self.INVALID_5.setObjectName("INVALID_5")
         self.Back = QtWidgets.QPushButton(self.bgwidget)
         self.Back.setGeometry(QtCore.QRect(15, 730, 351, 51))
         self.Back.setStyleSheet("border-radius: 20px;\n"
@@ -301,15 +244,12 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Atrium Sense Mode(AAI)"))
+        self.label.setText(_translate("Dialog", "Ventricle Pacing Mode(VOO)"))
         self.label_2.setText(_translate("Dialog", "Mode Parameters:"))
-        self.lol.setText(_translate("Dialog", "Lower Rate Limit"))
+        self.label_6.setText(_translate("Dialog", "Lower Rate Limit"))
         self.label_7.setText(_translate("Dialog", "Upper Rate Limit"))
-        self.label_8.setText(_translate("Dialog", "Atrial Amplitude"))
-        self.label_9.setText(_translate("Dialog", "Atrial Pulse Width"))
-        self.label_10.setText(_translate("Dialog", "Atrial Refractory Period"))
-        self.label_11.setText(_translate("Dialog", "Atrial Sensitivity"))
-        self.label_12.setText(_translate("Dialog", "Post Ventricle Atrial Refractory Period"))
+        self.label_8.setText(_translate("Dialog", "Ventricle Amplitude"))
+        self.label_9.setText(_translate("Dialog", "Ventricle Pulse Width"))
         self.label_13.setText(_translate("Dialog", "Current"))
         self.label_14.setText(_translate("Dialog", "Updated"))
         self.ApplyChanges.setText(_translate("Dialog", "Apply Changes"))
@@ -318,11 +258,8 @@ class Ui_Dialog(object):
         self.aai.setText(_translate("Dialog", "AAI Mode"))
         self.LRL_Current.setText(_translate("Dialog", "0"))
         self.URL_Current.setText(_translate("Dialog", "0"))
-        self.AA_Current.setText(_translate("Dialog", "0"))
-        self.APW_Current.setText(_translate("Dialog", "0"))
-        self.AS_Current.setText(_translate("Dialog", "0"))
-        self.ARP_Current.setText(_translate("Dialog", "0"))
-        self.PVARP_Current.setText(_translate("Dialog", "0"))
+        self.VV_Current.setText(_translate("Dialog", "0"))
+        self.VPW_Current.setText(_translate("Dialog", "0"))
         self.aoo.setText(_translate("Dialog", "AOO Mode"))
         self.logout.setText(_translate("Dialog", "Logout"))
         self.account.setText(_translate("Dialog", "Account"))

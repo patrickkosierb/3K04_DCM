@@ -5,8 +5,9 @@ import sys
 import sqlite3
 import os
 import string
+
 import config
-from menu import main_menu
+import menu
 
 class WelcomeScreen(QDialog): #welcome/login screen
 	def __init__(self): #consstructor: checks login credentials goes to main menu if login; user can register;
@@ -36,8 +37,8 @@ class WelcomeScreen(QDialog): #welcome/login screen
 	
 	#goes to main menu 
 	def go_to_menu(self): #goes to main menu; should then go to mode pages? 
-		menu = main_menu()
-		config.widget.addWidget(menu)
+		menu_var = menu.main_menu()
+		config.widget.addWidget(menu_var)
 		config.widget.setCurrentIndex(config.widget.currentIndex()+1)
 
 #registration screen

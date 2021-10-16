@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'aai_mode.ui'
+# Form implementation generated from reading ui file 'vvi_mode.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -59,27 +59,27 @@ class Ui_Dialog(object):
 "")
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.bgwidget)
-        self.label_8.setGeometry(QtCore.QRect(430, 350, 141, 41))
+        self.label_8.setGeometry(QtCore.QRect(430, 350, 171, 41))
         self.label_8.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.bgwidget)
-        self.label_9.setGeometry(QtCore.QRect(430, 425, 161, 41))
+        self.label_9.setGeometry(QtCore.QRect(430, 425, 191, 41))
         self.label_9.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_9.setObjectName("label_9")
         self.label_10 = QtWidgets.QLabel(self.bgwidget)
-        self.label_10.setGeometry(QtCore.QRect(430, 575, 211, 41))
+        self.label_10.setGeometry(QtCore.QRect(430, 575, 241, 41))
         self.label_10.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_10.setObjectName("label_10")
         self.label_11 = QtWidgets.QLabel(self.bgwidget)
-        self.label_11.setGeometry(QtCore.QRect(430, 500, 151, 41))
+        self.label_11.setGeometry(QtCore.QRect(430, 500, 171, 41))
         self.label_11.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_11.setObjectName("label_11")
         self.label_12 = QtWidgets.QLabel(self.bgwidget)
-        self.label_12.setGeometry(QtCore.QRect(430, 640, 341, 61))
+        self.label_12.setGeometry(QtCore.QRect(430, 640, 371, 61))
         self.label_12.setStyleSheet("font: 12pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_12.setObjectName("label_12")
@@ -138,26 +138,26 @@ class Ui_Dialog(object):
         self.URL_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
         self.URL_Current.setObjectName("URL_Current")
-        self.AA_Current = QtWidgets.QLabel(self.bgwidget)
-        self.AA_Current.setGeometry(QtCore.QRect(840, 360, 71, 21))
-        self.AA_Current.setStyleSheet("color: rgb(255,255,255);\n"
+        self.VV_Current = QtWidgets.QLabel(self.bgwidget)
+        self.VV_Current.setGeometry(QtCore.QRect(840, 360, 71, 21))
+        self.VV_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.AA_Current.setObjectName("AA_Current")
-        self.APW_Current = QtWidgets.QLabel(self.bgwidget)
-        self.APW_Current.setGeometry(QtCore.QRect(840, 435, 71, 21))
-        self.APW_Current.setStyleSheet("color: rgb(255,255,255);\n"
+        self.VV_Current.setObjectName("VV_Current")
+        self.VPW_Current = QtWidgets.QLabel(self.bgwidget)
+        self.VPW_Current.setGeometry(QtCore.QRect(840, 435, 71, 21))
+        self.VPW_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.APW_Current.setObjectName("APW_Current")
-        self.AS_Current = QtWidgets.QLabel(self.bgwidget)
-        self.AS_Current.setGeometry(QtCore.QRect(840, 510, 71, 21))
-        self.AS_Current.setStyleSheet("color: rgb(255,255,255);\n"
+        self.VPW_Current.setObjectName("VPW_Current")
+        self.VS_Current = QtWidgets.QLabel(self.bgwidget)
+        self.VS_Current.setGeometry(QtCore.QRect(840, 510, 71, 21))
+        self.VS_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.AS_Current.setObjectName("AS_Current")
-        self.ARP_Current = QtWidgets.QLabel(self.bgwidget)
-        self.ARP_Current.setGeometry(QtCore.QRect(840, 585, 71, 21))
-        self.ARP_Current.setStyleSheet("color: rgb(255,255,255);\n"
+        self.VS_Current.setObjectName("VS_Current")
+        self.VRP_Current = QtWidgets.QLabel(self.bgwidget)
+        self.VRP_Current.setGeometry(QtCore.QRect(840, 585, 71, 21))
+        self.VRP_Current.setStyleSheet("color: rgb(255,255,255);\n"
 "font: 12pt \"MS Shell Dlg 2\";")
-        self.ARP_Current.setObjectName("ARP_Current")
+        self.VRP_Current.setObjectName("VRP_Current")
         self.PVARP_Current = QtWidgets.QLabel(self.bgwidget)
         self.PVARP_Current.setGeometry(QtCore.QRect(840, 660, 71, 21))
         self.PVARP_Current.setStyleSheet("color: rgb(255,255,255);\n"
@@ -212,18 +212,18 @@ class Ui_Dialog(object):
         self.URL = QtWidgets.QLineEdit(self.bgwidget)
         self.URL.setGeometry(QtCore.QRect(1050, 285, 51, 22))
         self.URL.setObjectName("URL")
-        self.AA = QtWidgets.QLineEdit(self.bgwidget)
-        self.AA.setGeometry(QtCore.QRect(1050, 360, 51, 22))
-        self.AA.setObjectName("AA")
-        self.APW = QtWidgets.QLineEdit(self.bgwidget)
-        self.APW.setGeometry(QtCore.QRect(1050, 435, 51, 22))
-        self.APW.setObjectName("APW")
-        self.AS = QtWidgets.QLineEdit(self.bgwidget)
-        self.AS.setGeometry(QtCore.QRect(1050, 510, 51, 22))
-        self.AS.setObjectName("AS")
-        self.ARP = QtWidgets.QLineEdit(self.bgwidget)
-        self.ARP.setGeometry(QtCore.QRect(1050, 585, 51, 22))
-        self.ARP.setObjectName("ARP")
+        self.VV = QtWidgets.QLineEdit(self.bgwidget)
+        self.VV.setGeometry(QtCore.QRect(1050, 360, 51, 22))
+        self.VV.setObjectName("VV")
+        self.VPW = QtWidgets.QLineEdit(self.bgwidget)
+        self.VPW.setGeometry(QtCore.QRect(1050, 435, 51, 22))
+        self.VPW.setObjectName("VPW")
+        self.VS = QtWidgets.QLineEdit(self.bgwidget)
+        self.VS.setGeometry(QtCore.QRect(1050, 510, 51, 22))
+        self.VS.setObjectName("VS")
+        self.VRP = QtWidgets.QLineEdit(self.bgwidget)
+        self.VRP.setGeometry(QtCore.QRect(1050, 585, 51, 22))
+        self.VRP.setObjectName("VRP")
         self.PVARP = QtWidgets.QLineEdit(self.bgwidget)
         self.PVARP.setGeometry(QtCore.QRect(1050, 660, 51, 22))
         self.PVARP.setObjectName("PVARP")
@@ -301,14 +301,14 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "Atrium Sense Mode(AAI)"))
+        self.label.setText(_translate("Dialog", "Ventricle Sense Mode(VVI)"))
         self.label_2.setText(_translate("Dialog", "Mode Parameters:"))
         self.lol.setText(_translate("Dialog", "Lower Rate Limit"))
         self.label_7.setText(_translate("Dialog", "Upper Rate Limit"))
-        self.label_8.setText(_translate("Dialog", "Atrial Amplitude"))
-        self.label_9.setText(_translate("Dialog", "Atrial Pulse Width"))
-        self.label_10.setText(_translate("Dialog", "Atrial Refractory Period"))
-        self.label_11.setText(_translate("Dialog", "Atrial Sensitivity"))
+        self.label_8.setText(_translate("Dialog", "Ventricle Amplitude"))
+        self.label_9.setText(_translate("Dialog", "Ventricle Pulse Width"))
+        self.label_10.setText(_translate("Dialog", "Ventricle Refractory Period"))
+        self.label_11.setText(_translate("Dialog", "Ventricle Sensitivity"))
         self.label_12.setText(_translate("Dialog", "Post Ventricle Atrial Refractory Period"))
         self.label_13.setText(_translate("Dialog", "Current"))
         self.label_14.setText(_translate("Dialog", "Updated"))
@@ -318,10 +318,10 @@ class Ui_Dialog(object):
         self.aai.setText(_translate("Dialog", "AAI Mode"))
         self.LRL_Current.setText(_translate("Dialog", "0"))
         self.URL_Current.setText(_translate("Dialog", "0"))
-        self.AA_Current.setText(_translate("Dialog", "0"))
-        self.APW_Current.setText(_translate("Dialog", "0"))
-        self.AS_Current.setText(_translate("Dialog", "0"))
-        self.ARP_Current.setText(_translate("Dialog", "0"))
+        self.VV_Current.setText(_translate("Dialog", "0"))
+        self.VPW_Current.setText(_translate("Dialog", "0"))
+        self.VS_Current.setText(_translate("Dialog", "0"))
+        self.VRP_Current.setText(_translate("Dialog", "0"))
         self.PVARP_Current.setText(_translate("Dialog", "0"))
         self.aoo.setText(_translate("Dialog", "AOO Mode"))
         self.logout.setText(_translate("Dialog", "Logout"))
