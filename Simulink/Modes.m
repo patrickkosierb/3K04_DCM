@@ -1,4 +1,4 @@
-classdef Mode < Simulink.IntEnumType
+classdef Modes < Simulink.IntEnumType
   enumeration
     NO_PACE(0)
     AOO(1)
