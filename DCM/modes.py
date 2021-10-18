@@ -18,6 +18,8 @@ import menu
 
 class aoo_mode(QDialog):
 	def __init__(self):
+		# get param list from_serial(param)
+		# param = [150 100 200]
 		super(aoo_mode, self).__init__()
 		loadUi("interface/aoo_mode.ui", self)
 		self.current_param()
@@ -26,7 +28,7 @@ class aoo_mode(QDialog):
 		self.vvi.clicked.connect(self.go_to_vvi)
 		self.Back.clicked.connect(self.go_to_menu)
 		self.ApplyChanges.clicked.connect(self.update_param)
-		self.ResetChanges.clicked.connect(self.reset_param)
+		self.ResetChanges.clicked.connect(self.reset_param) #current_param
 		self.update_pm.clicked.connect(self.send_to_pm)
 
 	def go_to_aai(self): 

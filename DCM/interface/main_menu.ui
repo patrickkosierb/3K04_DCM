@@ -75,6 +75,25 @@ font: 12pt &quot;Arial&quot;;</string>
      <enum>Qt::Vertical</enum>
     </property>
    </widget>
+   <widget class="QPushButton" name="logout">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>380</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>logout</string>
+    </property>
+   </widget>
   </widget>
  </widget>
  <resources/>
