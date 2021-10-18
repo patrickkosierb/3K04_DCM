@@ -6,6 +6,7 @@ import sqlite3
 import os
 import string
 
+from helpers import go_to_page
 import config
 import menu
 
@@ -32,14 +33,12 @@ class WelcomeScreen(QDialog): #welcome/login screen
 	#goes to registration screen then back to login or main menu?
 	def go_to_newuser(self): #goes to registration screen; should then go to menu and saves credentials to .txt
 		newuser = new_user()
-		config.widget.addWidget(newuser)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)			
-	
+		go_to_page(newuser)
+
 	#goes to main menu 
 	def go_to_menu(self): #goes to main menu; should then go to mode pages? 
 		menu_var = menu.main_menu()
-		config.widget.addWidget(menu_var)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)
+		go_to_page(menu_var)
 
 #registration screen
 class new_user(QDialog): #registration screen

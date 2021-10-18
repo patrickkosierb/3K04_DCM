@@ -10,10 +10,9 @@ import sqlite3
 import os
 import string
 
-
 import config
 import menu
-
+from helpers import go_to_page, update_current
 # ATRIAL
 
 class aoo_mode(QDialog):
@@ -33,24 +32,19 @@ class aoo_mode(QDialog):
 
 	def go_to_aai(self): 
 		aai = aai_mode()
-		config.widget.addWidget(aai)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(aai)
 
 	def go_to_voo(self): 
 		voo = voo_mode()
-		config.widget.addWidget(voo)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(voo)
 
 	def go_to_vvi(self): 
 		vvi = vvi_mode()
-		config.widget.addWidget(vvi)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
-
+		go_to_page(vvi)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
-		config.widget.addWidget(menu_var)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)
+		go_to_page(menu_var)
 
 	# uses file io functions to take CURRENT parameters TAKEN FROM PACEMAKER and load them into the text boxes
 	def current_param(self):
@@ -61,42 +55,10 @@ class aoo_mode(QDialog):
 	
 	# update the current parameters, apply changes is only for ui, send to pacemaker will actually update pacemaker
 	def update_param(self):
-
-		LRL = self.LRL.text()
-		if(LRL.isdigit() and int(LRL)<255):
-			self.LRL_Current.setText(LRL)
-			self.INVALID.setText("")
-		elif(LRL == ""):
-			self.INVALID.setText("")
-		else:
-			self.INVALID.setText("Invalid*")
-
-		URL = self.URL.text()
-		if(URL.isdigit() and int(URL)<255):
-			self.URL_Current.setText(URL)
-			self.INVALID_2.setText("")
-		elif(URL == ""):
-			self.INVALID_2.setText("")
-		else:
-			self.INVALID_2.setText("Invalid*")
-
-		AA = self.AA.text()
-		if(AA.isdigit() and int(AA)<255):
-			self.AA_Current.setText(AA)
-			self.INVALID_3.setText("")
-		elif(AA == ""):
-			self.INVALID_3.setText("")		
-		else:
-			self.INVALID_3.setText("Invalid*")
-
-		APW = self.APW.text()
-		if(APW.isdigit() and int(APW)<255):
-			self.APW_Current.setText(APW)
-			self.INVALID_4.setText("")
-		elif(APW == ""):
-			self.INVALID_4.setText("")		
-		else:
-			self.INVALID_4.setText("Invalid*")
+		User = [self.LRL.text(), self.URL.text(),self.AA.text(),self.APW.text()]
+		Current = [self.LRL_Current, self.URL_Current,self.AA_Current,self.APW_Current] 
+		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]
+		update_current(User, Current, Label)
 
 	def reset_param(self):
 		#access text file again
@@ -133,24 +95,19 @@ class aai_mode(QDialog):
 
 	def go_to_aoo(self): 
 		aoo = aoo_mode()
-		config.widget.addWidget(aoo)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(aoo)
 
 	def go_to_voo(self): 
 		voo = voo_mode()
-		config.widget.addWidget(voo)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(voo)
 
 	def go_to_vvi(self): 
 		vvi = vvi_mode()
-		config.widget.addWidget(vvi)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(vvi)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
-		config.widget.addWidget(menu_var)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)
-
+		go_to_page(menu_var)
 
 	def current_param(self):
 		param = ['150', '200', '100']
@@ -159,69 +116,10 @@ class aai_mode(QDialog):
 		self.AA_Current.setText(param[2])
 	
 	def update_param(self):
-
-		LRL = self.LRL.text()
-		if(LRL.isdigit() and int(LRL)<255):
-			self.LRL_Current.setText(LRL)
-			self.INVALID.setText("")
-		elif(LRL == ""):
-			self.INVALID.setText("")
-		else:
-			self.INVALID.setText("Invalid*")
-
-		URL = self.URL.text()
-		if(URL.isdigit() and int(URL)<255):
-			self.URL_Current.setText(URL)
-			self.INVALID_2.setText("")
-		elif(URL == ""):
-			self.INVALID_2.setText("")
-		else:
-			self.INVALID_2.setText("Invalid*")
-
-		AA = self.AA.text()
-		if(AA.isdigit() and int(AA)<255):
-			self.AA_Current.setText(AA)
-			self.INVALID_3.setText("")
-		elif(AA == ""):
-			self.INVALID_3.setText("")		
-		else:
-			self.INVALID_3.setText("Invalid*")
-
-		APW = self.APW.text()
-		if(APW.isdigit() and int(APW)<255):
-			self.APW_Current.setText(APW)
-			self.INVALID_4.setText("")
-		elif(APW == ""):
-			self.INVALID_4.setText("")		
-		else:
-			self.INVALID_4.setText("Invalid*")
-
-		AS = self.AS.text()
-		if(AS.isdigit() and int(AS)<255):
-			self.AS_Current.setText(AS)
-			self.INVALID_5.setText("")
-		elif(AS == ""):
-			self.INVALID_5.setText("")		
-		else:
-			self.INVALID_5.setText("Invalid*")
-
-		ARP = self.ARP.text()
-		if(ARP.isdigit() and int(ARP)<255):
-			self.ARP_Current.setText(ARP)
-			self.INVALID_6.setText("")
-		elif(ARP == ""):
-			self.INVALID_6.setText("")		
-		else:
-			self.INVALID_6.setText("Invalid*")
-
-		PVARP = self.PVARP.text()
-		if(PVARP.isdigit() and int(PVARP)<255):
-			self.PVARP_Current.setText(PVARP)
-			self.INVALID_7.setText("")
-		elif(PVARP == ""):
-			self.INVALID_7.setText("")		
-		else:
-			self.INVALID_7.setText("Invalid*")
+		User = [self.LRL.text(), self.URL.text(),self.AA.text(),self.APW.text(),self.AS.text(),self.ARP.text(),self.PVARP.text()]
+		Current = [self.LRL_Current, self.URL_Current,self.AA_Current,self.APW_Current,self.AS_Current,self.ARP_Current,self.PVARP_Current] 
+		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4,self.INVALID_5,self.INVALID_6,self.INVALID_7]
+		update_current(User, Current, Label)
 
 	def reset_param(self):
 		param = ['150', '200', '100']
@@ -259,23 +157,19 @@ class voo_mode(QDialog):
 
 	def go_to_aoo(self): 
 		aoo = aoo_mode()
-		config.widget.addWidget(aoo)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(aoo)
 
 	def go_to_aai(self): 
 		aai = aai_mode()
-		config.widget.addWidget(aai)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(aai)
 
 	def go_to_vvi(self): 
 		vvi = vvi_mode()
-		config.widget.addWidget(vvi)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(vvi)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
-		config.widget.addWidget(menu_var)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)
+		go_to_page(menu_var)
 	
 	def current_param(self):
 		param = ['150', '200', '100']
@@ -284,42 +178,10 @@ class voo_mode(QDialog):
 		self.VV_Current.setText(param[2])
 	
 	def update_param(self):
-
-		LRL = self.LRL.text()
-		if(LRL.isdigit() and int(LRL)<255):
-			self.LRL_Current.setText(LRL)
-			self.INVALID.setText("")
-		elif(LRL == ""):
-			self.INVALID.setText("")
-		else:
-			self.INVALID.setText("Invalid*")
-
-		URL = self.URL.text()
-		if(URL.isdigit() and int(URL)<255):
-			self.URL_Current.setText(URL)
-			self.INVALID_2.setText("")
-		elif(URL == ""):
-			self.INVALID_2.setText("")
-		else:
-			self.INVALID_2.setText("Invalid*")
-
-		VV = self.VV.text()
-		if(VV.isdigit() and int(VV)<255):
-			self.VV_Current.setText(VV)
-			self.INVALID_3.setText("")
-		elif(VV == ""):
-			self.INVALID_3.setText("")		
-		else:
-			self.INVALID_3.setText("Invalid*")
-
-		VPW = self.VPW.text()
-		if(VPW.isdigit() and int(VPW)<255):
-			self.VPW_Current.setText(VPW)
-			self.INVALID_4.setText("")
-		elif(VPW == ""):
-			self.INVALID_4.setText("")		
-		else:
-			self.INVALID_4.setText("Invalid*")
+		User = [self.LRL.text(), self.URL.text(),self.VV.text(),self.VPW.text()]
+		Current = [self.LRL_Current, self.URL_Current,self.VV_Current,self.VPW_Current] 
+		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]
+		update_current(User, Current, Label)
 
 	def reset_param(self):
 		#access text file again
@@ -355,23 +217,19 @@ class vvi_mode(QDialog):
 
 	def go_to_aoo(self): 
 		aoo = aoo_mode()
-		config.widget.addWidget(aoo)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(aoo)
 
 	def go_to_aai(self): 
 		aai = aai_mode()
-		config.widget.addWidget(aai)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(aai)
 
 	def go_to_voo(self): 
 		voo = voo_mode()
-		config.widget.addWidget(voo)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)	
+		go_to_page(voo)	
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
-		config.widget.addWidget(menu_var)
-		config.widget.setCurrentIndex(config.widget.currentIndex()+1)
+		go_to_page(menu_var)
 
 	def current_param(self):
 		param = ['150', '200', '100']
@@ -380,70 +238,11 @@ class vvi_mode(QDialog):
 		self.VV_Current.setText(param[2])
 
 	def update_param(self):
-
-		LRL = self.LRL.text()
-		if(LRL.isdigit() and int(LRL)<255):
-			self.LRL_Current.setText(LRL)
-			self.INVALID.setText("")
-		elif(LRL == ""):
-			self.INVALID.setText("")
-		else:
-			self.INVALID.setText("Invalid*")
-
-		URL = self.URL.text()
-		if(URL.isdigit() and int(URL)<255):
-			self.URL_Current.setText(URL)
-			self.INVALID_2.setText("")
-		elif(URL == ""):
-			self.INVALID_2.setText("")
-		else:
-			self.INVALID_2.setText("Invalid*")
-
-		VV = self.VV.text()
-		if(VV.isdigit() and int(VV)<255):
-			self.VV_Current.setText(VV)
-			self.INVALID_3.setText("")
-		elif(VV == ""):
-			self.INVALID_3.setText("")		
-		else:
-			self.INVALID_3.setText("Invalid*")
-
-		VPW = self.VPW.text()
-		if(VPW.isdigit() and int(VPW)<255):
-			self.VPW_Current.setText(VPW)
-			self.INVALID_4.setText("")
-		elif(VPW == ""):
-			self.INVALID_4.setText("")		
-		else:
-			self.INVALID_4.setText("Invalid*")
-
-		VS = self.VS.text()
-		if(VS.isdigit() and int(VS)<255):
-			self.VS_Current.setText(VS)
-			self.INVALID_5.setText("")
-		elif(VS == ""):
-			self.INVALID_5.setText("")		
-		else:
-			self.INVALID_5.setText("Invalid*")
-
-		VRP = self.VRP.text()
-		if(VRP.isdigit() and int(VRP)<255):
-			self.VRP_Current.setText(VRP)
-			self.INVALID_6.setText("")
-		elif(VRP == ""):
-			self.INVALID_6.setText("")		
-		else:
-			self.INVALID_6.setText("Invalid*")
-
-		PVARP = self.PVARP.text()
-		if(PVARP.isdigit() and int(PVARP)<255):
-			self.PVARP_Current.setText(PVARP)
-			self.INVALID_7.setText("")
-		elif(PVARP == ""):
-			self.INVALID_7.setText("")		
-		else:
-			self.INVALID_7.setText("Invalid*")
-
+		User = [self.LRL.text(), self.URL.text(),self.VV.text(),self.VPW.text(),self.VS.text(),self.VRP.text(),self.PVARP.text()]
+		Current = [self.LRL_Current, self.URL_Current,self.VV_Current,self.VPW_Current,self.VS_Current,self.VRP_Current,self.PVARP_Current] 
+		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4,self.INVALID_5,self.INVALID_6,self.INVALID_7]
+		update_current(User, Current, Label)
+		
 	def reset_param(self):
 		param = ['150', '200', '100']
 		self.LRL_Current.setText(param[0])
