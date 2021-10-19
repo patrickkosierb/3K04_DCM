@@ -14,29 +14,73 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1200, 800)
+        Dialog.resize(1440, 783)
         self.bgwidget = QtWidgets.QWidget(Dialog)
-        self.bgwidget.setGeometry(QtCore.QRect(0, 0, 1200, 800))
+        self.bgwidget.setGeometry(QtCore.QRect(-50, -20, 1571, 901))
         self.bgwidget.setStyleSheet("QWidget#bgwidget{\n"
 "background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 rgba(0, 85, 9, 255), stop:1 rgba(255, 147, 147, 255));}")
         self.bgwidget.setObjectName("bgwidget")
         self.label = QtWidgets.QLabel(self.bgwidget)
-        self.label.setGeometry(QtCore.QRect(20, -20, 261, 111))
-        self.label.setStyleSheet("font: 20pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label.setGeometry(QtCore.QRect(500, 60, 361, 111))
+        self.label.setStyleSheet("font: 28pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label.setObjectName("label")
         self.modes = QtWidgets.QPushButton(self.bgwidget)
-        self.modes.setGeometry(QtCore.QRect(10, 170, 351, 51))
+        self.modes.setGeometry(QtCore.QRect(420, 170, 401, 91))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.modes.setFont(font)
         self.modes.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
 "background-color: rgb(255, 255, 216);\n"
-"font: 12pt \"Arial\";")
+"font: 20pt \"Arial\";")
         self.modes.setObjectName("modes")
-        self.line_2 = QtWidgets.QFrame(self.bgwidget)
-        self.line_2.setGeometry(QtCore.QRect(370, -10, 21, 861))
-        self.line_2.setFrameShape(QtWidgets.QFrame.VLine)
-        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
-        self.line_2.setObjectName("line_2")
+        self.modes_2 = QtWidgets.QPushButton(self.bgwidget)
+        self.modes_2.setGeometry(QtCore.QRect(420, 280, 401, 91))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.modes_2.setFont(font)
+        self.modes_2.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 20pt \"Arial\";")
+        self.modes_2.setObjectName("modes_2")
+        self.modes_3 = QtWidgets.QPushButton(self.bgwidget)
+        self.modes_3.setGeometry(QtCore.QRect(420, 400, 401, 91))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.modes_3.setFont(font)
+        self.modes_3.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 20pt \"Arial\";")
+        self.modes_3.setObjectName("modes_3")
+        self.logout1 = QtWidgets.QPushButton(self.bgwidget)
+        self.logout1.setGeometry(QtCore.QRect(420, 520, 401, 91))
+        font = QtGui.QFont()
+        font.setFamily("Arial")
+        font.setPointSize(20)
+        font.setBold(False)
+        font.setItalic(False)
+        font.setWeight(50)
+        self.logout1.setFont(font)
+        self.logout1.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 20pt \"Arial\";")
+        self.logout1.setObjectName("logout1")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -46,6 +90,9 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "Main Menu"))
         self.modes.setText(_translate("Dialog", "Modes"))
+        self.modes_2.setText(_translate("Dialog", "Graphs"))
+        self.modes_3.setText(_translate("Dialog", "Account Settings"))
+        self.logout1.setText(_translate("Dialog", "Logout"))
 
 
 if __name__ == "__main__":

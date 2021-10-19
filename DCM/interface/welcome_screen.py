@@ -34,14 +34,14 @@ class Ui_Dialog(object):
         self.login.setGeometry(QtCore.QRect(480, 430, 161, 51))
         self.login.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 216, 216);\n"
+"background-color: rgb(255, 255, 216);\n"
 "font: 16pt \"Arial\";")
         self.login.setObjectName("login")
         self.newuser = QtWidgets.QPushButton(self.bgwidget)
         self.newuser.setGeometry(QtCore.QRect(430, 500, 261, 51))
         self.newuser.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 216, 216);\n"
+"background-color: rgb(0, 150, 255);\n"
 "font: 16pt \"Arial\";")
         self.newuser.setObjectName("newuser")
         self.username = QtWidgets.QLineEdit(self.bgwidget)
@@ -55,12 +55,12 @@ class Ui_Dialog(object):
         self.password.setObjectName("password")
         self.label_3 = QtWidgets.QLabel(self.bgwidget)
         self.label_3.setGeometry(QtCore.QRect(450, 220, 451, 41))
-        self.label_3.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label_3.setStyleSheet("font: 10pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.bgwidget)
         self.label_4.setGeometry(QtCore.QRect(450, 310, 451, 41))
-        self.label_4.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label_4.setStyleSheet("font: 10pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_4.setObjectName("label_4")
         self.invalid_up = QtWidgets.QLabel(self.bgwidget)

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1200</width>
-    <height>802</height>
+    <height>803</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -72,7 +72,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
 color: rgb(0,0,0);
-background-color: rgb(255, 216, 216);
+background-color: rgb(255, 255, 216);
 font: 16pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
@@ -116,7 +116,7 @@ font: 16pt &quot;Arial&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
 </string>
     </property>
     <property name="text">
@@ -133,7 +133,7 @@ font: 16pt &quot;Arial&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
 </string>
     </property>
     <property name="text">
@@ -163,11 +163,47 @@ font: 16pt &quot;Arial&quot;;</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
 </string>
     </property>
     <property name="text">
      <string>Confirm Password</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="invalid_up2">
+    <property name="geometry">
+     <rect>
+      <x>450</x>
+      <y>475</y>
+      <width>451</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="back">
+    <property name="geometry">
+     <rect>
+      <x>480</x>
+      <y>580</y>
+      <width>161</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 216, 216);
+font: 16pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string> Back  </string>
     </property>
    </widget>
   </widget>

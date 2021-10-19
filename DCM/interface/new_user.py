@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(1200, 802)
+        Dialog.resize(1200, 803)
         self.bgwidget = QtWidgets.QWidget(Dialog)
         self.bgwidget.setGeometry(QtCore.QRect(0, 0, 1200, 800))
         self.bgwidget.setStyleSheet("QWidget#bgwidget{\n"
@@ -34,7 +34,7 @@ class Ui_Dialog(object):
         self.register_2.setGeometry(QtCore.QRect(480, 510, 161, 51))
         self.register_2.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
-"background-color: rgb(255, 216, 216);\n"
+"background-color: rgb(255, 255, 216);\n"
 "font: 16pt \"Arial\";")
         self.register_2.setObjectName("register_2")
         self.username = QtWidgets.QLineEdit(self.bgwidget)
@@ -48,12 +48,12 @@ class Ui_Dialog(object):
         self.password.setObjectName("password")
         self.label_3 = QtWidgets.QLabel(self.bgwidget)
         self.label_3.setGeometry(QtCore.QRect(450, 220, 451, 41))
-        self.label_3.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label_3.setStyleSheet("font: 10pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_3.setObjectName("label_3")
         self.label_4 = QtWidgets.QLabel(self.bgwidget)
         self.label_4.setGeometry(QtCore.QRect(450, 310, 451, 41))
-        self.label_4.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label_4.setStyleSheet("font: 10pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_4.setObjectName("label_4")
         self.password_confirm = QtWidgets.QLineEdit(self.bgwidget)
@@ -62,9 +62,22 @@ class Ui_Dialog(object):
         self.password_confirm.setObjectName("password_confirm")
         self.label_5 = QtWidgets.QLabel(self.bgwidget)
         self.label_5.setGeometry(QtCore.QRect(450, 400, 451, 41))
-        self.label_5.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 255, 255)\n"
+        self.label_5.setStyleSheet("font: 10pt \"Arial\"; color:rgb(255, 255, 255)\n"
 "")
         self.label_5.setObjectName("label_5")
+        self.invalid_up2 = QtWidgets.QLabel(self.bgwidget)
+        self.invalid_up2.setGeometry(QtCore.QRect(450, 475, 451, 41))
+        self.invalid_up2.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
+"")
+        self.invalid_up2.setText("")
+        self.invalid_up2.setObjectName("invalid_up2")
+        self.back = QtWidgets.QPushButton(self.bgwidget)
+        self.back.setGeometry(QtCore.QRect(480, 580, 161, 51))
+        self.back.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 216, 216);\n"
+"font: 16pt \"Arial\";")
+        self.back.setObjectName("back")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -78,6 +91,7 @@ class Ui_Dialog(object):
         self.label_3.setText(_translate("Dialog", "Username"))
         self.label_4.setText(_translate("Dialog", "Password"))
         self.label_5.setText(_translate("Dialog", "Confirm Password"))
+        self.back.setText(_translate("Dialog", " Back  "))
 
 
 if __name__ == "__main__":
