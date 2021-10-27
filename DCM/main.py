@@ -1,4 +1,4 @@
-# @ file: main.py
+# @ file: main.pyself.invalid_up2.setText("")
 # @ brief: main file runs welcome screen, begins state flow
 
 import sys
