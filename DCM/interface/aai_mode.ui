@@ -347,8 +347,8 @@ font: 12pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="aai">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>240</y>
+      <x>10</x>
+      <y>170</y>
       <width>351</width>
       <height>51</height>
      </rect>
@@ -485,8 +485,8 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
    <widget class="QPushButton" name="aoo">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>140</y>
+      <x>10</x>
+      <y>110</y>
       <width>351</width>
       <height>51</height>
      </rect>
@@ -561,8 +561,8 @@ font: 75 12pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="voo">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>340</y>
+      <x>10</x>
+      <y>350</y>
       <width>351</width>
       <height>51</height>
      </rect>
@@ -580,8 +580,8 @@ font: 12pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="vvi">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>440</y>
+      <x>10</x>
+      <y>410</y>
       <width>351</width>
       <height>51</height>
      </rect>
@@ -1996,6 +1996,120 @@ font: 75 10pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string>Clear Inputs</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aoor">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>230</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>AOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aair">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>AAIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="voor">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>470</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>VOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vvir">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>530</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>VVIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="door">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>590</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>DOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="doo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>650</y>
+      <width>351</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>DOO Mode</string>
     </property>
    </widget>
   </widget>
