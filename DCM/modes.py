@@ -27,12 +27,20 @@ class aoo_mode(QDialog):
 		super(aoo_mode, self).__init__()
 		loadUi("interface/aoo_mode.ui", self)
 		self.current_param()
+
 		self.logout.clicked.connect(self.go_to_logout)
 		self.account.clicked.connect(self.go_to_account)
 		self.aai.clicked.connect(self.go_to_aai)
 		self.voo.clicked.connect(self.go_to_voo)
 		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
 		self.Back.clicked.connect(self.go_to_menu)
+
 		self.ApplyChanges.clicked.connect(self.update_param)
 		self.ResetChanges.clicked.connect(self.reset_param) #current_param
 		self.update_pm.clicked.connect(self.send_to_pm)
@@ -49,6 +57,30 @@ class aoo_mode(QDialog):
 	def go_to_vvi(self): 
 		vvi = vvi_mode()
 		go_to_page(vvi)
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
@@ -67,6 +99,7 @@ class aoo_mode(QDialog):
 	def current_param(self):
 		self.user_display.setText("User: "+config.is_current_user())
 		self.pacemaker_number.setText("Pacemaker ID: "+config.is_current_pm())
+		
 		self.LRL_Current.setText(param_aoo[0]) #since the variables are directly from a txt file we dont need to convert int -> str
 		self.URL_Current.setText(param_aoo[1])
 		self.AA_Current.setText(param_aoo[2])
@@ -117,6 +150,12 @@ class aai_mode(QDialog):
 		self.aoo.clicked.connect(self.go_to_aoo)
 		self.voo.clicked.connect(self.go_to_voo)
 		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
 		self.Back.clicked.connect(self.go_to_menu)
 		self.ApplyChanges.clicked.connect(self.update_param)
 		self.ResetChanges.clicked.connect(self.reset_param)
@@ -134,6 +173,30 @@ class aai_mode(QDialog):
 	def go_to_vvi(self): 
 		vvi = vvi_mode()
 		go_to_page(vvi)
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
@@ -205,6 +268,12 @@ class voo_mode(QDialog):
 		self.aoo.clicked.connect(self.go_to_aoo)
 		self.aai.clicked.connect(self.go_to_aai)
 		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
 		self.Back.clicked.connect(self.go_to_menu)
 		self.ApplyChanges.clicked.connect(self.update_param)
 		self.ResetChanges.clicked.connect(self.reset_param)
@@ -222,6 +291,30 @@ class voo_mode(QDialog):
 	def go_to_vvi(self): 
 		vvi = vvi_mode()
 		go_to_page(vvi)
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
@@ -283,6 +376,12 @@ class vvi_mode(QDialog):
 		self.aoo.clicked.connect(self.go_to_aoo)
 		self.aai.clicked.connect(self.go_to_aai)
 		self.voo.clicked.connect(self.go_to_voo)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
 		self.Back.clicked.connect(self.go_to_menu)
 		self.ApplyChanges.clicked.connect(self.update_param)
 		self.ResetChanges.clicked.connect(self.reset_param)
@@ -304,6 +403,30 @@ class vvi_mode(QDialog):
 	def go_to_voo(self): 
 		voo = voo_mode()
 		go_to_page(voo)	
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
 
 	def go_to_menu(self): 
 		menu_var = menu.main_menu()
@@ -358,3 +481,437 @@ class vvi_mode(QDialog):
 		User = [self.LRL, self.URL,self.VA,self.VPW,self.VS,self.VRP,self.PVARP]
 		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4,self.INVALID_5,self.INVALID_6,self.INVALID_7]
 		clear_box(User,Label)
+
+
+
+# a2
+
+class aoor_mode(QDialog):
+	def __init__(self):
+		# get param list from_serial(param)
+		super(aoor_mode, self).__init__()
+		loadUi("interface/aoor_mode.ui", self)
+		# self.current_param()
+		self.logout.clicked.connect(self.go_to_logout)
+		self.account.clicked.connect(self.go_to_account)
+		self.aoo.clicked.connect(self.go_to_aoo)
+		self.aai.clicked.connect(self.go_to_aai)
+		self.voo.clicked.connect(self.go_to_voo)
+		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
+		self.Back.clicked.connect(self.go_to_menu)
+		# self.ApplyChanges.clicked.connect(self.update_param)
+		# self.ResetChanges.clicked.connect(self.reset_param) 
+		# self.update_pm.clicked.connect(self.send_to_pm)
+		# self.clear.clicked.connect(self.clear_inputs)
+	def go_to_aoo(self): 
+		aoo = aoo_mode()
+		go_to_page(aoo)
+
+	def go_to_aai(self): 
+		aai = aai_mode()
+		go_to_page(aai)
+
+	def go_to_voo(self): 
+		voo = voo_mode()
+		go_to_page(voo)	
+
+	def go_to_vvi(self): 
+		vvi = vvi_mode()
+		go_to_page(vvi)			
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
+
+	def go_to_menu(self): 
+		menu_var = menu.main_menu()
+		go_to_page(menu_var)
+
+	def go_to_logout(self): 
+		welcome_var = welcome.WelcomeScreen()
+		go_to_page(welcome_var)
+
+	def go_to_account(self):
+		account_var = account.account_page()
+		go_to_page(account_var)
+
+
+class aair_mode(QDialog):
+	def __init__(self):
+		# get param list from_serial(param)
+		super(aair_mode, self).__init__()
+		loadUi("interface/aair_mode.ui", self)
+		# self.current_param()
+		self.logout.clicked.connect(self.go_to_logout)
+		self.account.clicked.connect(self.go_to_account)
+		self.aoo.clicked.connect(self.go_to_aoo)
+		self.aai.clicked.connect(self.go_to_aai)
+		self.voo.clicked.connect(self.go_to_voo)
+		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
+		self.Back.clicked.connect(self.go_to_menu)
+		# self.ApplyChanges.clicked.connect(self.update_param)
+		# self.ResetChanges.clicked.connect(self.reset_param) 
+		# self.update_pm.clicked.connect(self.send_to_pm)
+		# self.clear.clicked.connect(self.clear_inputs)
+	def go_to_aoo(self): 
+		aoo = aoo_mode()
+		go_to_page(aoo)
+
+	def go_to_aai(self): 
+		aai = aai_mode()
+		go_to_page(aai)
+
+	def go_to_voo(self): 
+		voo = voo_mode()
+		go_to_page(voo)	
+
+	def go_to_vvi(self): 
+		vvi = vvi_mode()
+		go_to_page(vvi)			
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
+
+	def go_to_menu(self): 
+		menu_var = menu.main_menu()
+		go_to_page(menu_var)
+
+	def go_to_logout(self): 
+		welcome_var = welcome.WelcomeScreen()
+		go_to_page(welcome_var)
+
+	def go_to_account(self):
+		account_var = account.account_page()
+		go_to_page(account_var)
+
+
+
+class voor_mode(QDialog):
+	def __init__(self):
+		# get param list from_serial(param)
+		super(voor_mode, self).__init__()
+		loadUi("interface/voor_mode.ui", self)
+		# self.current_param()
+		self.logout.clicked.connect(self.go_to_logout)
+		self.account.clicked.connect(self.go_to_account)
+		self.aoo.clicked.connect(self.go_to_aoo)
+		self.aai.clicked.connect(self.go_to_aai)
+		self.voo.clicked.connect(self.go_to_voo)
+		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
+		self.Back.clicked.connect(self.go_to_menu)
+		# self.ApplyChanges.clicked.connect(self.update_param)
+		# self.ResetChanges.clicked.connect(self.reset_param) 
+		# self.update_pm.clicked.connect(self.send_to_pm)
+		# self.clear.clicked.connect(self.clear_inputs)
+	def go_to_aoo(self): 
+		aoo = aoo_mode()
+		go_to_page(aoo)
+
+	def go_to_aai(self): 
+		aai = aai_mode()
+		go_to_page(aai)
+
+	def go_to_voo(self): 
+		voo = voo_mode()
+		go_to_page(voo)	
+
+	def go_to_vvi(self): 
+		vvi = vvi_mode()
+		go_to_page(vvi)			
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
+
+	def go_to_menu(self): 
+		menu_var = menu.main_menu()
+		go_to_page(menu_var)
+
+	def go_to_logout(self): 
+		welcome_var = welcome.WelcomeScreen()
+		go_to_page(welcome_var)
+
+	def go_to_account(self):
+		account_var = account.account_page()
+		go_to_page(account_var)
+
+
+class vvir_mode(QDialog):
+	def __init__(self):
+		# get param list from_serial(param)
+		super(vvir_mode, self).__init__()
+		loadUi("interface/vvir_mode.ui", self)
+		# self.current_param()
+		self.logout.clicked.connect(self.go_to_logout)
+		self.account.clicked.connect(self.go_to_account)
+		self.aoo.clicked.connect(self.go_to_aoo)
+		self.aai.clicked.connect(self.go_to_aai)
+		self.voo.clicked.connect(self.go_to_voo)
+		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.door.clicked.connect(self.go_to_door)
+		self.Back.clicked.connect(self.go_to_menu)
+		# self.ApplyChanges.clicked.connect(self.update_param)
+		# self.ResetChanges.clicked.connect(self.reset_param) 
+		# self.update_pm.clicked.connect(self.send_to_pm)
+		# self.clear.clicked.connect(self.clear_inputs)
+	def go_to_aoo(self): 
+		aoo = aoo_mode()
+		go_to_page(aoo)
+
+	def go_to_aai(self): 
+		aai = aai_mode()
+		go_to_page(aai)
+
+	def go_to_voo(self): 
+		voo = voo_mode()
+		go_to_page(voo)	
+
+	def go_to_vvi(self): 
+		vvi = vvi_mode()
+		go_to_page(vvi)			
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
+
+	def go_to_menu(self): 
+		menu_var = menu.main_menu()
+		go_to_page(menu_var)
+
+	def go_to_logout(self): 
+		welcome_var = welcome.WelcomeScreen()
+		go_to_page(welcome_var)
+
+	def go_to_account(self):
+		account_var = account.account_page()
+		go_to_page(account_var)
+
+
+
+class doo_mode(QDialog):
+	def __init__(self):
+		# get param list from_serial(param)
+		super(doo_mode, self).__init__()
+		loadUi("interface/doo_mode.ui", self)
+		# self.current_param()
+		self.logout.clicked.connect(self.go_to_logout)
+		self.account.clicked.connect(self.go_to_account)
+		self.aoo.clicked.connect(self.go_to_aoo)
+		self.aai.clicked.connect(self.go_to_aai)
+		self.voo.clicked.connect(self.go_to_voo)
+		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.door.clicked.connect(self.go_to_door)
+		self.Back.clicked.connect(self.go_to_menu)
+		# self.ApplyChanges.clicked.connect(self.update_param)
+		# self.ResetChanges.clicked.connect(self.reset_param) 
+		# self.update_pm.clicked.connect(self.send_to_pm)
+		# self.clear.clicked.connect(self.clear_inputs)
+	def go_to_aoo(self): 
+		aoo = aoo_mode()
+		go_to_page(aoo)
+
+	def go_to_aai(self): 
+		aai = aai_mode()
+		go_to_page(aai)
+
+	def go_to_voo(self): 
+		voo = voo_mode()
+		go_to_page(voo)	
+
+	def go_to_vvi(self): 
+		vvi = vvi_mode()
+		go_to_page(vvi)			
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_door(self): 
+		door = door_mode()
+		go_to_page(door)
+
+
+	def go_to_menu(self): 
+		menu_var = menu.main_menu()
+		go_to_page(menu_var)
+
+	def go_to_logout(self): 
+		welcome_var = welcome.WelcomeScreen()
+		go_to_page(welcome_var)
+
+	def go_to_account(self):
+		account_var = account.account_page()
+		go_to_page(account_var)
+
+
+class door_mode(QDialog):
+	def __init__(self):
+		# get param list from_serial(param)
+		super(door_mode, self).__init__()
+		loadUi("interface/door_mode.ui", self)
+		# self.current_param()
+		self.logout.clicked.connect(self.go_to_logout)
+		self.account.clicked.connect(self.go_to_account)
+		self.aoo.clicked.connect(self.go_to_aoo)
+		self.aai.clicked.connect(self.go_to_aai)
+		self.voo.clicked.connect(self.go_to_voo)
+		self.vvi.clicked.connect(self.go_to_vvi)
+		self.aoor.clicked.connect(self.go_to_aoor)
+		self.aair.clicked.connect(self.go_to_aair)
+		self.voor.clicked.connect(self.go_to_voor)
+		self.vvir.clicked.connect(self.go_to_vvir)
+		self.doo.clicked.connect(self.go_to_doo)
+		self.Back.clicked.connect(self.go_to_menu)
+		# self.ApplyChanges.clicked.connect(self.update_param)
+		# self.ResetChanges.clicked.connect(self.reset_param) 
+		# self.update_pm.clicked.connect(self.send_to_pm)
+		# self.clear.clicked.connect(self.clear_inputs)
+	def go_to_aoo(self): 
+		aoo = aoo_mode()
+		go_to_page(aoo)
+
+	def go_to_aai(self): 
+		aai = aai_mode()
+		go_to_page(aai)
+
+	def go_to_voo(self): 
+		voo = voo_mode()
+		go_to_page(voo)	
+
+	def go_to_vvi(self): 
+		vvi = vvi_mode()
+		go_to_page(vvi)			
+
+	def go_to_aoor(self): 
+		aoor = aoor_mode()
+		go_to_page(aoor)
+
+	def go_to_aair(self): 
+		aair = aair_mode()
+		go_to_page(aair)
+
+	def go_to_voor(self): 
+		voor = voor_mode()
+		go_to_page(voor)
+
+	def go_to_vvir(self): 
+		vvir = vvir_mode()
+		go_to_page(vvir)
+
+	def go_to_doo(self): 
+		doo = doo_mode()
+		go_to_page(doo)
+
+	def go_to_menu(self): 
+		menu_var = menu.main_menu()
+		go_to_page(menu_var)
+
+	def go_to_logout(self): 
+		welcome_var = welcome.WelcomeScreen()
+		go_to_page(welcome_var)
+
+	def go_to_account(self):
+		account_var = account.account_page()
+		go_to_page(account_var)
+
+
