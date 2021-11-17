@@ -5,6 +5,7 @@ classdef Modes < Simulink.IntEnumType
     VOO(2)
     AAI(3)
     VVI(4)
+    DOO(5)
   end
 end
 
