@@ -1827,37 +1827,37 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
     <item>
      <property name="text">
-      <string>V-Low</string>
+      <string>1</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Low</string>
+      <string>2</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Med-Low</string>
+      <string>3</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Med</string>
+      <string>4</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>Med-High</string>
+      <string>5</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>High</string>
+      <string>6</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>V-High</string>
+      <string>7</string>
      </property>
     </item>
    </widget>

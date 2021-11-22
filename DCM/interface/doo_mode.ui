@@ -1858,7 +1858,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QComboBox" name="comboBox">
+   <widget class="QComboBox" name="FAVD">
     <property name="geometry">
      <rect>
       <x>1050</x>

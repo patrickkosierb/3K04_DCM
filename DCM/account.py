@@ -10,7 +10,7 @@ import config
 import menu
 from helpers import go_to_page
 
-class account_page(QDialog): #main menu screen
+class account_page(QDialog): 
     def __init__(self):
         super(account_page, self).__init__()
         loadUi("interface/account_page.ui", self)

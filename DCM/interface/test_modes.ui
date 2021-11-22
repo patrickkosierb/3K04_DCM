@@ -40,7 +40,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Dual Rate Modulation(DOOR)</string>
+     <string>Pacemaker Modes and Parameters</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -344,25 +344,6 @@ font: 12pt &quot;Arial&quot;;</string>
      <string>I have reviewed my changes </string>
     </property>
    </widget>
-   <widget class="QPushButton" name="aai">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>170</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>AAI Mode</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="LRL_Current">
     <property name="geometry">
      <rect>
@@ -482,25 +463,6 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="aoo">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>110</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>AOO Mode</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="logout">
     <property name="geometry">
      <rect>
@@ -556,44 +518,6 @@ font: 75 12pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string>Account</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="voo">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>350</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>VOO Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="vvi">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>410</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>VVI Mode</string>
     </property>
    </widget>
    <widget class="QLabel" name="INVALID">
@@ -1483,122 +1407,6 @@ font: 75 10pt &quot;Arial&quot;;</string>
      <string>Clear Inputs</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="aoor">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>230</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>AOOR Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="aair">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>290</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>AAIR Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="voor">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>470</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>VOOR Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="vvir">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>530</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>VVIR Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="door">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>590</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(0, 255, 150);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>DOOR Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="doo">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>650</y>
-      <width>351</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>DOO Mode</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_15">
     <property name="geometry">
      <rect>
@@ -1650,7 +1458,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="RCT_Current">
+   <widget class="QLabel" name="RTC_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -1828,6 +1636,11 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
     <item>
      <property name="text">
+      <string>0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>1</string>
      </property>
     </item>
@@ -1848,17 +1661,12 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </item>
     <item>
      <property name="text">
-      <string>6</string>
+      <string>5</string>
      </property>
     </item>
     <item>
      <property name="text">
       <string>6</string>
-     </property>
-    </item>
-    <item>
-     <property name="text">
-      <string>7</string>
      </property>
     </item>
    </widget>
@@ -2189,7 +1997,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="FAVD_Current">
+   <widget class="QLabel" name="PVARP_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -2584,7 +2392,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="FAVD">
+   <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
       <x>1050</x>
@@ -2718,6 +2526,176 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       <string>300</string>
      </property>
     </item>
+   </widget>
+   <widget class="QRadioButton" name="aoo_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>130</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>AOO Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="aai_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>190</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>AAI Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="aoor_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>250</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>AOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="aair_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>310</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>AAIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="voo_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>370</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>VOO Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="vvi_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>430</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>VVI Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="voor_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>490</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>VOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="vvir_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>550</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>VVIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="doo_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>610</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>DOO Mode</string>
+    </property>
+   </widget>
+   <widget class="QRadioButton" name="door_rb">
+    <property name="geometry">
+     <rect>
+      <x>80</x>
+      <y>670</y>
+      <width>241</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 20pt &quot;Arial&quot;; 
+color: rgb(255,255,255)</string>
+    </property>
+    <property name="text">
+     <string>DOOR Mode</string>
+    </property>
    </widget>
   </widget>
  </widget>

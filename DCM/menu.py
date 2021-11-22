@@ -13,6 +13,7 @@ import config
 import modes
 import welcome
 import account
+import graphs
 from helpers import go_to_page
 
 class main_menu(QDialog): #main menu screen
@@ -22,6 +23,7 @@ class main_menu(QDialog): #main menu screen
 		self.modes.clicked.connect(self.go_to_modes)
 		self.logout1.clicked.connect(self.go_to_welcome)
 		self.modes_3.clicked.connect(self.go_to_accounts)
+		self.graphs.clicked.connect(self.go_to_graphs)
 
 	def go_to_modes(self):
 		aoo = modes.aoo_mode()
@@ -34,3 +36,7 @@ class main_menu(QDialog): #main menu screen
 	def go_to_accounts(self):
 		account_var = account.account_page()
 		go_to_page(account_var)
+
+	def go_to_graphs(self):
+		graphs_var = graphs.graphs_page()
+		go_to_page(graphs_var)
