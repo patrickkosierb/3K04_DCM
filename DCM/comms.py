@@ -9,7 +9,7 @@ class serialThreadClass(QThread):
 		self.ser = serial.Serial()
 		self.ser.baudrate = 115200
 		self.ser.port = "COM8"
-		self.ser.timeout = 10
+		self.ser.timeout = 3
 
 	def open_serial(self):
 		self.ser.open()
@@ -20,32 +20,66 @@ class serialThreadClass(QThread):
 		self.ser.close()
 		print("Closed: "+ self.ser.port)
 
-	def get_data(self,size):
-		temp = ['0', '0', '0', '0','0', '0', '0','0', '0', '0', '0','0', '0', '0', '0']
-		if(size == 15):
-			#uint8
-			for i in range(0,8):
-				temp[i] = self.ser.readline(1)
-				temp[i]= str(int.from_bytes(temp[i],'little'))
-				print(temp[i])
-			# uint16
-			for i in range(8,11):
-				temp[i] = self.ser.readline(2)
-				temp[i] = struct.unpack('<h', temp[i])
-				temp[i] = str(temp[i][0])
-				print(temp[i])
-			# single
-			for i in range(11,15):
-				temp[i] = self.ser.readline(4)
-				temp[i] = struct.unpack('<f', temp[i])
-				temp[i] = str(temp[i][0])
-				print(temp[i])
+	def check_conn(self):
+		echo = bytes([1])
+		self.ser.write(echo)
+		for i in range(0,31):
+			buff = bytes([0])
+			self.ser.write(buff)
 
-		print(temp)
-		return temp
+		sync = self.ser.readline(1) # sync
+		sync = int.from_bytes(sync,'little')
+		if(sync == 255):
+			return 1
+		else:
+			print("Sync. Failure")
+			return 0
 
-	def send_data(self,param_list):
-		
+	def get_param(self):		
+
+		if(self.check_conn()):
+			# check function code
+			code = self.ser.readline(1)
+			code = int.from_bytes(code,'little')
+			if(code == 2):
+				# receive param
+				temp = ['0', '0', '0', '0','0', '0', '0','0', '0', '0', '0','0', '0', '0', '0']
+				#uint8
+				for i in range(0,8):
+					temp[i] = self.ser.readline(1)
+					temp[i]= str(int.from_bytes(temp[i],'little'))
+					print(temp[i])
+				# uint16
+				for i in range(8,11):
+					temp[i] = self.ser.readline(2)
+					temp[i] = struct.unpack('<h', temp[i])
+					temp[i] = str(temp[i][0])
+					print(temp[i])
+				# single
+				for i in range(11,15):
+					temp[i] = self.ser.readline(4)
+					temp[i] = struct.unpack('<f', temp[i])
+					temp[i] = str(temp[i][0])
+					print(temp[i])
+				print(temp)
+				# have a check tolernce function? here is where we'd change/ round the parameters 
+				return temp
+
+			else:
+				print("Func. Failure")
+				return 0
+		else:
+			print("Sync. Failure")
+			return 0
+
+
+
+	def send_data(self,param_list): 
+		sync = bytes([255])
+		self.ser.write(sync)
+		code = bytes([2])
+		self.ser.write(code)
+
 		for param in param_list:
 			if(param.isdigit()):
 				if(int(param)>=256):
@@ -61,3 +95,54 @@ class serialThreadClass(QThread):
 
 			self.ser.write(param)
 
+		pm_data = self.get_param()
+		# for loop with tolerances for example if 0.2< pm_data<0.21 success
+
+
+
+	# def get_graph(self):
+
+	# 	# self.ser.write('1')
+		# while 1: button which freezes graph, the condition is based on this 
+	# 		atrial = self.ser.readline(1)
+	# 		ventricle = self.ser.readline(1)
+
+
+		
+
+	# func 0 init
+	# send sync
+	# send 0x00 and 0000000000000000000
+	# read for sync (connected textbox)
+	# else try again button 
+	# time python library 
+
+	# func 1 echo parameters
+	# send sync
+	# send 0x01 and 00000000000000000
+	# read for sync
+	# read for 0x02 (func 2)
+	# read param
+
+	# func 2 write parameters to pm
+	# send sync
+	# send 0x02 
+	# send param
+	# call func 1
+	# compare param  
+	# wrong data run func 2 again
+
+	# func 3 command pm to send ecg data and store
+	# send sync
+	# send 0x03 000000000000
+	# READ
+	# read for sync
+	# read for 0x03
+	# read ecgdata (n points tbd)
+	# JMP READ
+
+	# maybe another function for 
+
+	# func 4 stop sending ecg
+    # send sync
+    # send 0x04 0000000000000000000000000

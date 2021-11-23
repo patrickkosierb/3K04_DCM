@@ -17,19 +17,43 @@ import account
 from helpers import go_to_page, update_current, clear_box, load_current, update_text
 
 import comms
+import devices
 
 last_param = ['0', '0', '0', '0','0', '0', '0','0', '0', '0', '0','0', '0', '0', '0']
 config.current_pm("000")
 
-
+myDevice = devices.Device()
 mySerial = comms.serialThreadClass()
+
+# when app starts
+mySerial.open_serial()
+status = mySerial.check_conn()
+mySerial.close_serial()
+
 # ATRIAL
 class aoo_mode(QDialog):
 	def __init__(self):
 		# get param list from_serial(param)
 		super(aoo_mode, self).__init__()
 		loadUi("interface/aoo_mode.ui", self)
+
 		self.current_param()
+		if(status):
+			self.connected.setText("Connected")
+			self.disconnected.setText("")
+			if(myDevice.get_PM()==0):
+				print("not a past device")
+				# popup to add device
+				myDevice.add_device("patrick")
+				self.pacemaker_number.setText("Patient: "+myDevice.get_PM())
+			else:
+				self.pacemaker_number.setText("Patient: "+myDevice.get_PM())
+
+		else:
+			self.disconnected.setText("Disconnected")
+			self.connected.setText("")
+			self.pacemaker_number.setText("")
+
 		self.logout.clicked.connect(self.go_to_logout)
 		self.account.clicked.connect(self.go_to_account)
 		self.aai.clicked.connect(self.go_to_aai)
@@ -45,9 +69,10 @@ class aoo_mode(QDialog):
 		
 		self.ApplyChanges.clicked.connect(self.update_param)
 		self.ResetChanges.clicked.connect(self.current_param) #current_param
-		self.update_pm.clicked.connect(self.send_to_pm)
 		self.clear.clicked.connect(self.clear_inputs)
-
+		self.update_pm.clicked.connect(self.send_to_pm)
+		self.refresh.clicked.connect(self.connected_pm)
+		self.receive.clicked.connect(self.get_from_pm)
 
 	def go_to_aai(self): 
 		
@@ -98,18 +123,16 @@ class aoo_mode(QDialog):
 		account_var = account.account_page()
 		go_to_page(account_var)
 
-
 	# uses file io functions to take CURRENT parameters TAKEN FROM PACEMAKER and load them into the text boxes
 	def current_param(self):
 		self.user_display.setText("User: "+config.is_current_user())
-		self.pacemaker_number.setText("Pacemaker ID: "+config.is_current_pm())
+		# self.pacemaker_number.setText("Pacemaker ID: "+config.is_current_pm())
 		last_param = load_current()
 		self.LRL_Current.setText(last_param[1]) #since the variables are directly from a txt file we dont need to convert int -> str
 		self.URL_Current.setText(last_param[2])
 		self.AA_Current.setText(last_param[11])
 		self.APW_Current.setText(last_param[12])
 
-	
 	# update the current parameters, apply changes is only for ui, send to pacemaker will actually update pacemaker
 	def update_param(self):
 		User = [self.LRL.currentText(), self.URL.currentText(),self.AA.currentText(),self.APW.currentText()];
@@ -117,10 +140,39 @@ class aoo_mode(QDialog):
 		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]
 		update_current(User, Current, Label)
 
+	def clear_inputs(self):
+		User = [self.LRL, self.URL,self.AA,self.APW];
+		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]
+		clear_box(User,Label)
+
+	def connected_pm(self):
+		mySerial.open_serial()
+		if(mySerial.check_conn()):
+			global status
+			status = 1
+			self.connected.setText("Connected")
+			self.disconnected.setText("")
+			self.INVALID_6.setText("")
+
+			if(myDevice.get_PM()==0):
+				print("not a past device")
+				# popup to add device
+				myDevice.add_device("patrick")
+				self.pacemaker_number.setText("Patient: "+myDevice.get_PM())
+			else:
+				self.pacemaker_number.setText("Patient: "+myDevice.get_PM())
+
+		else:
+			status = 0
+			self.disconnected.setText("Disconnected")
+			self.connected.setText("")
+			self.INVALID_6.setText("")
+			self.pacemaker_number.setText("")
+		mySerial.close_serial()
+
 	#take current and update text file
 	def send_to_pm(self):
 		if(self.checkBox.isChecked()):
-			mySerial.open_serial()
 			self.checkBox.setChecked(False)
 			self.INVALID_5.setText("")
 			last_param = load_current()
@@ -130,28 +182,29 @@ class aoo_mode(QDialog):
 			last_param[11] = self.AA_Current.text()
 			last_param[12] = self.APW_Current.text()
 			update_text(last_param)
-			mySerial.send_data(last_param)
-			print(last_param)
+			mySerial.open_serial()			
+			mySerial.send_data(last_param) #have some condition for not sent (ex. sending failed  check connection similar to get)
 			mySerial.close_serial()
-
+			print(last_param)
+	
 		else:
 			self.INVALID_5.setText("*Please confirm changes")
 
-	def receive_data(self):
-		data = serial.get_data()
-		data = data.decode()
+	def get_from_pm(self):
+		mySerial.open_serial()
+		recieved = mySerial.get_param()
+		mySerial.close_serial()
+		if(type(recieved)==list):
+			global status
+			status = 1
+			self.connected.setText("Connected")
+			self.disconnected.setText("")
+			self.INVALID_6.setText("")
+		else:
+			status = 0
+			self.INVALID_6.setText("Receive failed: Refresh to check connection or try again")
 
-
-	def clear_inputs(self):
-		# testing recieving data
-		# mySerial.open_serial()
-		# mySerial.get_data(15)
-		# mySerial.close_serial()
-		User = [self.LRL, self.URL,self.AA,self.APW];
-		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]
-		clear_box(User,Label)
-
-
+	
 class aai_mode(QDialog):
 	def __init__(self):
 		super(aai_mode, self).__init__()
