@@ -135,6 +135,7 @@ class aoo_mode(QDialog):
 
 	# update the current parameters, apply changes is only for ui, send to pacemaker will actually update pacemaker
 	def update_param(self):
+		# check here?
 		User = [self.LRL.currentText(), self.URL.currentText(),self.AA.currentText(),self.APW.currentText()];
 		Current = [self.LRL_Current, self.URL_Current,self.AA_Current,self.APW_Current] 
 		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]

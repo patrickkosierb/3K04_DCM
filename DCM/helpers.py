@@ -21,12 +21,14 @@ def go_to_page(page):
 # checks if combo box is at first index
 def isValid(user,current,label,i):
 
-
 	if(isDigit(user[i]) == False):
 		# label[i].setText("Invalid*")
 		return 0;	
 	else:	
 		label[i].setText("")
+
+		# LRL<MSR<=URL
+		
 		# if(i == 0):
 			# temp_cur = int(current[i].text())
 			# current[i].setText(user[i])	
@@ -47,6 +49,8 @@ def isValid(user,current,label,i):
 		# 		label[i].setText("Invalid*")
 		# 	else:
 		# 		current[i].setText(user[i])	
+		# 
+
 	return 1;
 
 

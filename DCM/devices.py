@@ -44,3 +44,4 @@ class Device:
 
 	def get_PM(self):
 		return self.compare_devices()
+		

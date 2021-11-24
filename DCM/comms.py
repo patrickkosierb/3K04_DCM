@@ -21,9 +21,11 @@ class serialThreadClass(QThread):
 		print("Closed: "+ self.ser.port)
 
 	def check_conn(self):
+		sync = bytes([255])
+		self.ser.write(sync)
 		echo = bytes([1])
 		self.ser.write(echo)
-		for i in range(0,31):
+		for i in range(0,30):
 			buff = bytes([0])
 			self.ser.write(buff)
 
@@ -72,8 +74,6 @@ class serialThreadClass(QThread):
 			print("Sync. Failure")
 			return 0
 
-
-
 	def send_data(self,param_list): 
 		sync = bytes([255])
 		self.ser.write(sync)
@@ -94,9 +94,12 @@ class serialThreadClass(QThread):
 				print(param)
 
 			self.ser.write(param)
-
 		pm_data = self.get_param()
-		# for loop with tolerances for example if 0.2< pm_data<0.21 success
+		# for loop with tolerances for example if 0.2< pm_data< 0.21 success
+		# if wrong values try again 
+		# round(pm_data[i],2) do this with all floats!
+		# ours = 135 +- 5  
+		# 130< theirs <140 
 
 
 
@@ -109,13 +112,6 @@ class serialThreadClass(QThread):
 
 
 		
-
-	# func 0 init
-	# send sync
-	# send 0x00 and 0000000000000000000
-	# read for sync (connected textbox)
-	# else try again button 
-	# time python library 
 
 	# func 1 echo parameters
 	# send sync
