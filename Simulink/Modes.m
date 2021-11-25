@@ -4,15 +4,15 @@ classdef Modes < Simulink.IntEnumType
     % start with AOOR
     NO_PACE(0)
     AOO(1)
-    VOO(2)
-    AAI(3)
-    VVI(4)
-    DOO(5)
-    AOOR(6)
+    AAI(2)
+    AOOR(3)
+    AAIR(4)
+    VOO(5)
+    VVI(6)
     VOOR(7)
-    AAIR(8)
-    VVIR(9)
-    DOOR(10)
+    VVIR(8)
+    DOOR(9)
+    DOO(10)
   end
 end
 
