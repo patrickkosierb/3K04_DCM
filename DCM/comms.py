@@ -1,6 +1,7 @@
 import serial 
 import struct 
 from PyQt5.QtCore import pyqtSignal, QThread
+import copy
 
 class serialThreadClass(QThread):
 	
@@ -9,7 +10,7 @@ class serialThreadClass(QThread):
 		self.ser = serial.Serial()
 		self.ser.baudrate = 115200
 		self.ser.port = "COM8"
-		self.ser.timeout = 3
+		self.ser.timeout = 1
 
 	def open_serial(self):
 		self.ser.open()
@@ -25,16 +26,15 @@ class serialThreadClass(QThread):
 		self.ser.write(sync)
 		echo = bytes([1])
 		self.ser.write(echo)
-		for i in range(0,30):
+		for i in range(0,24):
 			buff = bytes([0])
 			self.ser.write(buff)
-
 		sync = self.ser.readline(1) # sync
 		sync = int.from_bytes(sync,'little')
 		if(sync == 255):
 			return 1
 		else:
-			print("Sync. Failure")
+			print("ERROR: Receive Sync. Failure")
 			return 0
 
 	def get_param(self):		
@@ -47,71 +47,114 @@ class serialThreadClass(QThread):
 				# receive param
 				temp = ['0', '0', '0', '0','0', '0', '0','0', '0', '0', '0','0', '0', '0', '0']
 				#uint8
-				for i in range(0,8):
+				for i in range(0,10):
 					temp[i] = self.ser.readline(1)
 					temp[i]= str(int.from_bytes(temp[i],'little'))
-					print(temp[i])
+					# print(temp[i])
 				# uint16
-				for i in range(8,11):
+				for i in range(10,13):
 					temp[i] = self.ser.readline(2)
 					temp[i] = struct.unpack('<h', temp[i])
 					temp[i] = str(temp[i][0])
-					print(temp[i])
+					# print(temp[i])
 				# single
-				for i in range(11,15):
+				for i in range(13,15):
 					temp[i] = self.ser.readline(4)
 					temp[i] = struct.unpack('<f', temp[i])
-					temp[i] = str(temp[i][0])
-					print(temp[i])
+					temp[i] = temp[i][0]
+					# print(temp[i])
+			
+				for i in range(13,15):
+					temp[i] = str(round(temp[i],2))
 				print(temp)
-				# have a check tolernce function? here is where we'd change/ round the parameters 
 				return temp
-
+				
 			else:
-				print("Func. Failure")
+				print("ERROR: Receive Func. Error")
 				return 0
 		else:
-			print("Sync. Failure")
 			return 0
 
-	def send_data(self,param_list): 
+	def send_data(self,param_list):
+		temp = param_list
+
+		# self.ser.reset_output_buffer()
 		sync = bytes([255])
 		self.ser.write(sync)
 		code = bytes([2])
 		self.ser.write(code)
-
-		for param in param_list:
-			if(param.isdigit()):
-				if(int(param)>=256):
-					param = struct.pack('<h',int(param))
-					print([ "0x%02x" % b for b in param])
-				else:
-					param = bytes([int(param)])
-					print(param)
-			else:
-				param = struct.pack('<f',float(param))
-				print([ "0x%02x" % b for b in param])
-				print(param)
-
-			self.ser.write(param)
-		pm_data = self.get_param()
-		# for loop with tolerances for example if 0.2< pm_data< 0.21 success
-		# if wrong values try again 
-		# round(pm_data[i],2) do this with all floats!
-		# ours = 135 +- 5  
-		# 130< theirs <140 
+		# print(code)
+		# uint8
+		for i in range(0,10):
+			temp[i] = bytes([int(temp[i])])
+			# print(temp[i])
+			self.ser.write(temp[i])
+		# uint16
+		for i in range(10,13):
+			temp[i] = struct.pack('<h',int(temp[i]))
+			# print([ "0x%02x" % b for b in temp[i]])
+			self.ser.write(temp[i])
+		# single
+		for i in range(13,15):
+			temp[i] = struct.pack('<f',float(temp[i]))
+			# print([ "0x%02x" % b for b in temp[i]])
+			self.ser.write(temp[i])
 
 
 
-	# def get_graph(self):
-
-	# 	# self.ser.write('1')
-		# while 1: button which freezes graph, the condition is based on this 
-	# 		atrial = self.ser.readline(1)
-	# 		ventricle = self.ser.readline(1)
-
-
+		# pm_data = self.get_param()
 		
+		return 1
+
+
+# 
+
+	def get_graph(self):
+		vent_data = [0]
+		atrial_data = [0]
+
+		sync = bytes([255])
+		self.ser.write(sync)
+		code = bytes([3])
+		self.ser.write(code)
+		for i in range(0,26):
+			buff = bytes([0])
+			self.ser.write(buff)
+
+		sync = self.ser.readline(1) # sync
+		sync = int.from_bytes(sync,'little')
+		if(sync == 255):
+			code = self.ser.readline(1)
+			code = int.from_bytes(code,'little')
+			if(code == 3):
+				while (len(atrial_data)<2): #change to size of sent
+					atrial = self.ser.readline(4)
+					print(atrial)
+					atrial = struct.unpack('<f', atrial)
+					atrial_data.append(atrial[0])
+					# print(atrial_data, len(atrial_data))
+
+					vent = self.ser.readline(4)
+					vent = struct.unpack('<f', vent)
+					vent_data.append(vent[0])
+					print(vent_data)
+
+				return atrial_data, vent_data
+			else:
+				print("ERROR: Graphs Func. Error")
+				return 0, 0
+		else:
+			print("ERROR: Graphs Sync. Error")
+			return 0, 0
+
+	def stop_graph(self):
+		sync = bytes([255])
+		self.ser.write(sync)
+		code = bytes([4])
+		self.ser.write(code)
+		for i in range(0,30):
+			buff = bytes([0])
+			self.ser.write(buff)
 
 	# func 1 echo parameters
 	# send sync

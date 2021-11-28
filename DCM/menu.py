@@ -26,8 +26,10 @@ class main_menu(QDialog): #main menu screen
 		self.graphs.clicked.connect(self.go_to_graphs)
 
 	def go_to_modes(self):
-		aoo = modes.aoo_mode()
-		go_to_page(aoo)
+		modes_var = modes.mode()
+		go_to_page(modes_var)
+		# aoo = modes.aoo_mode()
+		# go_to_page(aoo)
 
 	def go_to_welcome(self):
 		welcome_var = welcome.WelcomeScreen()

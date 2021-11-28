@@ -26,31 +26,6 @@ def isValid(user,current,label,i):
 		return 0;	
 	else:	
 		label[i].setText("")
-
-		# LRL<MSR<=URL
-		
-		# if(i == 0):
-			# temp_cur = int(current[i].text())
-			# current[i].setText(user[i])	
-			# temp_1 = int(current[i].text())
-			# temp_2 = 
-			# if((float(user[i])>=float(user[i+1])) or float(user[i])>=float(current[i+1])):
-		# 		label[i].setText("Invalid*")
-
-			
-				# if(i == 0 and isValid(user,current,label,i)):
-
-		# 	if((float(user[i])>=float(user[i+1])) or float(user[i])>=float(current[i+1])):
-		# 		label[i].setText("Invalid*")
-		# 	else:
-		# 		current[i].setText(user[i])	
-		# elif(i == 1 and isValid(user,current,label,i)):
-		# 	if((float(user[i])<=float(user[i-1])) or float(user[i])<=float(current[i-1])):
-		# 		label[i].setText("Invalid*")
-		# 	else:
-		# 		current[i].setText(user[i])	
-		# 
-
 	return 1;
 
 
@@ -61,15 +36,23 @@ def update_current(user, current, label):
 			current[i].setText(user[i])	
 
 def load_current():
+	# cur = config.is_current_pm()
+	# try:
 	db = open("data/parameters.txt","r")
 	for line in db:
 		last_line = line
 	last_param = last_line.split(", ")
 	last_param.pop()
 	db.close()
+	# except:
+	# 	db = open("data/PM-ID-"+cur+".txt","w+")
+	# 	db.write("0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ")
+	# 	db.close()
+	# 	last_param = ['0', '0', '0', '0','0', '0', '0','0', '0', '0', '0','0', '0', '0', '0']
 	return last_param
 
 def update_text(param):
+	# cur = config.is_current_pm()
 	db = open("data/parameters.txt","a")
 	db.write("\n")
 	for val in param:

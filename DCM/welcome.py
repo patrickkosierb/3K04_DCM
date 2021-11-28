@@ -32,11 +32,14 @@ class WelcomeScreen(QDialog):
 			db = open("data/users.txt","r")
 			d = []
 			f = []
+			z = []
 			for i in db:
 				l = i.split(", ")		
 				l[1]=l[1].strip()
+				l[2]=l[2].strip()
 				d.append(l[0])
 				f.append(l[1])
+				z.append(l[2])
 			data = dict(zip(d, f))
 
 			try:
@@ -45,7 +48,10 @@ class WelcomeScreen(QDialog):
 						if password == data[user]:
 							config.current_user(user)
 							config.current_password(password)
-							config.current_line(l[2].strip())
+							for i in range(0, len(z)):
+								if(user == d[i]):
+									config.current_line(int(z[i]))
+							# config.current_line(l[2].strip()) #fix this
 							self.go_to_menu()
 						else:
 							self.invalid_up.setText("Incorrect username or password")

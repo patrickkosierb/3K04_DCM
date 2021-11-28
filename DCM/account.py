@@ -8,14 +8,20 @@ import string
 
 import config
 import menu
+import devices
 from helpers import go_to_page
 
+myDevice = devices.Device()
+
+# change to about
 class account_page(QDialog): 
     def __init__(self):
         super(account_page, self).__init__()
         loadUi("interface/account_page.ui", self)
         self.username.setText(config.is_current_user())
-        self.pm_no.setText(config.is_current_pm())
+        name = myDevice.get_PM()[0]
+        self.pm_no.setText(name)
+       	self.pm_id.setText(myDevice.Get_Current_ID()[0])
         self.password.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.password_confirm.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.changes.clicked.connect(self.change_username)
@@ -50,7 +56,8 @@ class account_page(QDialog):
 	    	else:
 	    		db = open("data/users.txt",'r')
 	    		lines = db.readlines()
-	    		lines[int(config.is_line())-1] = new_user+", "+config.is_password()+", "+str(config.is_line())
+
+	    		lines[int(config.is_line())-1] = new_user+", "+config.is_password()+", "+str(config.is_line())+'\n'
 	    		config.current_user(new_user)
 	    		db = open("data/users.txt","w")
 	    		db.writelines(lines)

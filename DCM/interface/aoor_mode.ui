@@ -91,7 +91,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Disconnected</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="pacemaker_number">
@@ -348,9 +348,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>170</y>
+      <y>222</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -486,9 +486,9 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>110</y>
+      <y>166</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -562,9 +562,9 @@ font: 75 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>350</y>
+      <y>390</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -581,9 +581,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>410</y>
+      <y>446</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1259,6 +1259,11 @@ font: 12pt &quot;Arial&quot;;</string>
     </item>
     <item>
      <property name="text">
+      <string>0.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
       <string>0.5</string>
      </property>
     </item>
@@ -1454,12 +1459,12 @@ font: 12pt &quot;Arial&quot;;</string>
     </item>
     <item>
      <property name="text">
-      <string>1.0</string>
+      <string>1</string>
      </property>
     </item>
     <item>
      <property name="text">
-      <string>2.0</string>
+      <string>2</string>
      </property>
     </item>
    </widget>
@@ -1487,9 +1492,9 @@ font: 75 10pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>230</y>
+      <y>278</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1507,9 +1512,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>290</y>
+      <y>334</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1526,9 +1531,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>470</y>
+      <y>502</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1545,9 +1550,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>530</y>
+      <y>558</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1564,9 +1569,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>590</y>
+      <y>614</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -1583,9 +1588,9 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>650</y>
+      <y>670</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -2126,6 +2131,59 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
       <x>960</x>
       <y>620</y>
       <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="no_pacing">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>No Pacing</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refresh">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>40</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 216);
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Sync Up</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="conn_error">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>70</y>
+      <width>191</width>
       <height>31</height>
      </rect>
     </property>
