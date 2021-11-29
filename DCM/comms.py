@@ -10,7 +10,7 @@ class serialThreadClass(QThread):
 		self.ser = serial.Serial()
 		self.ser.baudrate = 115200
 		self.ser.port = "COM7"
-		self.ser.timeout = 2
+		self.ser.timeout = 0.5
 
 	def open_serial(self):
 		try:
@@ -46,6 +46,7 @@ class serialThreadClass(QThread):
 				return 0
 		except:
 			print("pm not conn")
+			return 0
 
 	def get_param(self):		
 
@@ -76,7 +77,7 @@ class serialThreadClass(QThread):
 			
 				for i in range(13,15):
 					temp[i] = str(round(temp[i],2))
-				print(temp)
+				# print(temp)
 				return temp
 				
 			else:
@@ -87,7 +88,7 @@ class serialThreadClass(QThread):
 			return 0
 
 	def send_data(self,param_list):
-		temp = param_list
+		temp = copy.deepcopy(param_list)
 
 		# self.ser.reset_output_buffer()
 		try:
@@ -111,93 +112,150 @@ class serialThreadClass(QThread):
 				temp[i] = struct.pack('<f',float(temp[i]))
 				# print([ "0x%02x" % b for b in temp[i]])
 				self.ser.write(temp[i])
-			# pm_data = self.get_param()
-		
+			time.sleep(2)
+			pm_data = self.get_param()
+			pm_data[13] = float(pm_data[13])
+			pm_data[13]=round(pm_data[13],2)
+			pm_data[14] = float(pm_data[14])
+			pm_data[14]=round(pm_data[14],2)
+			pm_data[13] = str(pm_data[13])
+			pm_data[14] = str(pm_data[14])
+
+			if(pm_data == param_list):
+				print("successfully sent data")
+				return 1
+			else:
+				print("failed to revieve")
+				return 0
 			return 1
 		except:
 			print("pn not con")
-
-
-
-	def send_3(self):
-		sync = bytes([255])
-		self.ser.write(sync)
-		code = bytes([3])
-		self.ser.write(code)
-		for i in range(0,24):
-			buff = bytes([0])
-			self.ser.write(buff)
-		sync = self.ser.readline(1) # sync
-		sync = int.from_bytes(sync,'little')
-		if(sync == 255):
-			code = self.ser.readline(1)
-			code = int.from_bytes(code,'little')
-			if(code == 3):
-				return 1
-			else:
-				print("ERROR: Graphs Func. Error")
-				return 0
-		else:
-			print("ERROR: Graphs Sync. Error")
 			return 0
 
 
+
+
+
+
+
+	# def send_3(self):
+	# 	try:
+	# 		sync = bytes([255])
+	# 		self.ser.write(sync)
+	# 		code = bytes([3])
+	# 		self.ser.write(code)
+	# 		for i in range(0,24):
+	# 			buff = bytes([0])
+	# 			self.ser.write(buff)
+	# 		sync = self.ser.readline(1) # sync
+	# 		sync = int.from_bytes(sync,'little')
+	# 		if(sync == 255):
+	# 			code = self.ser.readline(1)
+	# 			code = int.from_bytes(code,'little')
+	# 			if(code == 3):
+	# 				return 1
+	# 			else:
+	# 				print("ERROR: Graphs Func. Error")
+	# 				return 0
+	# 		else:
+	# 			print("ERROR: Graphs Sync. Error")
+	# 			return 0
+	# 	except:
+	# 		print("PM not found")
+	# 		return 0
+	
+	def start_3(self):
+		try:
+			sync = bytes([255])
+			self.ser.write(sync)
+			code = bytes([3])
+			self.ser.write(code)
+			for i in range(0,24):
+				buff = bytes([0])
+				self.ser.write(buff)
+			return 1
+		except:
+			print("pm not found")	
+			return 0
+
+	def read_3(self):
+		try:
+			sync = self.ser.readline(1) # sync
+			sync = int.from_bytes(sync,'little')
+			if(sync == 255):
+				code = self.ser.readline(1)
+				code = int.from_bytes(code,'little')
+				if(code == 3):
+					return 1
+				else:
+					print("ERROR: Graphs Func. Error")
+					return 0
+			else:
+				print(sync)
+				print("ERROR: Graphs Sync. Error")
+				return 0	
+		except:
+
+			print("pm not found")
+			return 0	
+
 	def get_graph(self):
+
 		data = []
+		atr = []
+		vent_d = []
 
-		atrial = self.ser.readline(4)
-		atrial = struct.unpack('<f', atrial)
-		atrial = atrial[0]
-		data.append(atrial)
+		for i in range(0, 9):
+			if(i==3 or i == 6):
+				self.read_3()
+			atrial = self.ser.readline(4)
+			atrial = struct.unpack('<f', atrial)
+			# print(atrial)
+			atrial = atrial[0]
+			atr.append(atrial)
+			
+			vent = self.ser.readline(4)
+			vent = struct.unpack('<f', vent)
+			# print(vent)
+			vent = vent[0]
+			vent_d.append(vent)
+		# for i in range(0, 3):
 
-		vent = self.ser.readline(4)
-		vent = struct.unpack('<f', vent)
-		vent = vent[0]
-		data.append(vent)
-		time.sleep(0.1)
-		print("get graph")
-		print(data)
+
+		# 	atrial = self.ser.readline(4)
+		# 	atrial = struct.unpack('<f', atrial)
+		# 	# print(atrial)
+		# 	atrial = atrial[0]
+		# 	atr.append(atrial)
+			
+		# 	vent = self.ser.readline(4)
+		# 	vent = struct.unpack('<f', vent)
+		# 	# print(vent)
+		# 	vent = vent[0]
+		# 	vent_d.append(vent)
+
+		data.append(atr)
+		data.append(vent_d)
+		print("Data from get_graph: [AA, VA]: ",data)
 		return data
-
-
+		# else:
+			# return 
 
 	def stop_graph(self):
-		sync = bytes([255])
-		self.ser.write(sync)
-		code = bytes([4])
-		self.ser.write(code)
-		for i in range(0,24):
-			buff = bytes([0])
-			self.ser.write(buff)
+		try:
+			sync = bytes([255])
+			self.ser.write(sync)
+			code = bytes([4])
+			self.ser.write(code)
+			for i in range(0,24):
+				buff = bytes([0])
+				self.ser.write(buff)
+		except:
+			print("pm not found")
 
-
-
-	# func 1 echo parameters
-	# send sync
-	# send 0x01 and 00000000000000000
-	# read for sync
-	# read for 0x02 (func 2)
-	# read param
-
-	# func 2 write parameters to pm
-	# send sync
-	# send 0x02 
-	# send param
-	# call func 1
-	# compare param  
-	# wrong data run func 2 again
-
-	# func 3 command pm to send ecg data and store
-	# send sync
-	# send 0x03 000000000000
-	# READ
-	# read for sync
-	# read for 0x03
-	# read ecgdata (n points tbd)
-	# JMP READ
-
-	# maybe another function for 
-
-	# func 4 stop sending ecg
-    # send sync
-    # send 0x04 0000000000000000000000000
+	def clear_buff(self):
+		try:
+			self.ser.reset_output_buffer()
+			self.ser.reset_input_buffer()
+		except:
+			print("Pm not found")

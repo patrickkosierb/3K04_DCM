@@ -1,8 +1,6 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import*
-from pyqtgraph import PlotWidget
-from pyqtgraph.Qt import QtGui, QtCore
 from  numpy import * 
 
 
@@ -18,190 +16,199 @@ import struct
 
 from itertools import count
 import random
-# import pandas as pd
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
-
+from matplotlib.widgets import Button   
 mySerial = comms.serialThreadClass()
 # plt.style.use('fivethirtyeight')
-x = []
-y = []
+va = [0]
+xv = [0]
 
-index = count()
-# mySerial.close_serial()
-
-# Width = 2
-# va = linspace(0,0,Width)
-# x_vent = 0
-
-# aa = linspace(0,0,Width)
-# x_atr = 0
-
-# vtr_on = 0
-# atr_on = 0
-
-# v_flag = 0
-# a_flag = 0
-
-# data = [0, 0]
-
-# mySerial.open_serial()
-
-
-
-def animate(i):
-    try:
-        data = mySerial.get_graph()
-        x.append(next(index))
-        y.append(data[1])
-        print(x)
-        print(y)
-        plt.cla()
-        plt.plot(x,y)
-    except struct.error:
-        # mySerial.close_serial()
-        plt.close()
-        print("values not received")
-        # return 0
-
-
-# def get_data(void):
+aa = [0]
+xa = [0]
+indexV = count()
+indexA = count()
 
 
 class graphs_page(QDialog):
 
     def __init__(self):
         super(graphs_page, self).__init__()
-        loadUi("interface/graphs.ui", self)
+        loadUi("interface/graphs_v2.ui", self)
         self.Back.clicked.connect(self.go_to_menu)
         self.ventricle_view.clicked.connect(self.graph_vent)
-        # self.stop_vent.clicked.connect(self.stop_graph_vent)
         self.atrial_view.clicked.connect(self.graph_atrial)
-        # self.vent = self.vent_graph.plot()
-        # self.atr = self.atr_graph.plot()
-
+        self.start_both.clicked.connect(self.graph_both)
+        mySerial.open_serial()
 
     def go_to_menu(self):
-        # global x_vent,va,v_flag,v_on,x_atr,aa,a_flag,atr_on
 
-        # v_flag = 0
-        # va = linspace(0,0,Width)
-        # x_vent = 0
-        # v_on = 0
-
-        # a_flag = 0
-        # aa = linspace(0,0,Width)
-        # x_atr = 0
-        # a_on = 0
-
-        # self.vent_graph.plot()
-        # self.atr_graph.plot()
-        # mySerial.open_serial()
-        # mySerial.stop_graph()
-        # mySerial.close_serial()
+        global va,xv,aa,xa,indexV,indexA
+        va = [0]
+        xv = [0]
+        aa = [0]
+        xa = [0]
+        indexV = count()
+        indexA = count()
+        mySerial.stop_graph()
+        mySerial.close_serial()
         menu_var = menu.main_menu()
         go_to_page(menu_var)
 
 
+    def get_data(self):
+        data = []
+        try:
+            data1 = mySerial.get_graph()
+            atr = data1[0]
+            vtr = data1[1]
+            return [atr,vtr]
+        except:
+            print("recieved fail")
+            return [data,data]   
+        return [data,data]
+
 
     def graph_vent(self):
+        global mode
+        mode = 1
+        self.run()
 
-        if(mySerial.send_3()):
-            ani = FuncAnimation(plt.gcf(),animate, interval=2000)
+    def graph_atrial(self):
+        global mode
+        mode = 2
+        self.run()
+
+    def graph_both(self):
+        global mode
+        mode = 3
+        self.run()
+
+
+    def animate(self,i):
+        global xv,va,xa,aa
+        if(mySerial.read_3()):
+            if(mode ==1):
+
+                data = self.get_data()
+                temp1 = len(va)
+                va = va+data[1]
+                temp2 = len(va)
+                if(temp1<temp2):
+                    for i in range(xv[-1],xv[-1]+9):
+                        xv.append(i)
+
+                    # xv.append(next(indexV))
+                # print("X: ",xv)
+                # print("VA: ",va)
+                
+                return plt.plot(xv,va,'b-'),
+
+            elif(mode ==2):
+                data = self.get_data()
+                temp1 = len(aa)
+                aa = aa+data[0]
+                temp2 = len(aa)
+
+                if(temp1<temp2):
+                    for i in range(xa[-1],xa[-1]+3):
+                        xa.append(i)
+
+                # print("X: ",xa)
+                # print("AA: ",aa)
+
+                return plt.plot(xa,aa,'r-'),
+        else:
+            if(mode == 1):
+                return plt.plot(xv,va,'b-'),
+            elif(mode ==2):
+                return plt.plot(xa,aa,'r-'), 
+            elif(mode == 3):
+                plt.plot(xv,va, label='Ventricle')
+                return plt.plot(xa,aa, label='Atrial')
+            print("failed to animate")
+
+
+    def run(self):
+        mySerial.clear_buff()
+        if(mySerial.start_3()):
+            fig = plt.figure()
+            ani = FuncAnimation(fig,func=self.animate, interval=1000)
             plt.show()
             print("vent")
         else:
-            print("failed to animate")
+            if(mode == 1):
+                return plt.plot(xv,va,'b-'),
+            elif(mode ==2):
+                return plt.plot(xa,aa,'r-'), 
+            elif(mode == 3):
+                plt.plot(xv,va, label='Ventricle')
+                return plt.plot(xa,aa, label='Atrial')
+            print("failed to animate")            
 
-    def graph_atrial(self):
-        print("atr")
 
 
 
 
 
-    # def graph_vent(self):
 
-    #     mySerial.open_serial()
-    #     global v_flag,data, x_vent, va, vtr_on
-    #     v_flag = 1
-    #     if(atr_on==0):
-    #         vtr_on = 1
-    #         if(mySerial.send_3()):
 
-    #             while v_flag:
-    #                 va[:-1] = va[1:]
-    #                 try:
-    #                     data = mySerial.get_graph()
-    #                     va[-1] = data[1]
 
-    #                 except struct.error:
-    #                     v_flag = 0
-    #                     print("values not received")
-    #                     mySerial.close_serial()
-    #                     break
-    #                 x_vent +=0.1
-    #                 self.vent.setData(va)
-    #                 self.vent.setPos(x_vent,0)
-    #                 QtGui.QApplication.processEvents()
 
-    #         else:
-    #             mySerial.close_serial()
-        
+
+
+
+
+
+
+    # def animate(self,i):
+    #     global xv,va,xa,aa
+
+    #     if(mode ==1):
+    #         data = self.get_data()
+    #         temp1 = len(va)
+    #         va = va+data[1]
+    #         temp2 = len(va)
+    #         if(temp1<temp2):
+    #             xv.append(next(indexV))
+            
+    #         print("X: ",xv)
+    #         print("VA: ",va)
+            
+    #         return plt.plot(xv,va,'b-'),
+
+    #     elif(mode ==2):
+    #         data = self.get_data()
+    #         temp1 = len(aa)
+    #         aa = aa+data[0]
+    #         temp2 = len(aa)
+
+    #         if(temp1<temp2):
+    #             xa.append(next(indexA))
+
+    #         print("X: ",xa)
+    #         print("AA: ",aa)
+
+    #         return plt.plot(xa,aa,'r-'),
+
+    # def run(self):
+    #     mySerial.clear_buff()
+    #     if(mySerial.send_3()):
+    #         fig = plt.figure()
+    #         ani = FuncAnimation(fig,func=self.animate, interval=1000)
+    #         plt.show()
+    #         print("vent")
     #     else:
-    #         while v_flag:
-    #             va[:-1] = va[1:]
-    #             va[-1] = data[1]
-    #             x_vent +=0.0001
-    #             self.vent.setData(va)
-    #             self.vent.setPos(x_vent,0)
-    #             QtGui.QApplication.processEvents()
+    #         if(mode == 1):
+    #             plt.plot(xv,va)
+    #             plt.show()
+    #         elif(mode ==2):
+    #             plt.plot(xa,aa)
+    #             plt.show()  
+    #         elif(mode == 3):
+    #             plt.plot(xv,va, label='Ventricle')
+    #             plt.plot(xa,aa, label='Atrial')
+    #             plt.legend(loc='upper left')
+    #             plt.show()
+    #         print("failed to animate")
 
-
-
-    # def graph_atrial(self):
-    #     # value = 1
-    #     global a_flag,data, x_atr, aa, atr_on
-    #     a_flag = 1
-    #     if(vtr_on==0):
-    #         atr_on = 1
-
-    #         if(mySerial.send_3()):
-
-    #             while a_flag:
-    #                 aa[:-1] = aa[1:]
-    #                 try:
-    #                     data = mySerial.get_graph()
-    #                     aa[-1] = data[0]
-    #                 except struct.error:
-    #                     a_flag = 0
-    #                     print("values not received")
-    #                     break
-    #                 x_atr +=0.0001
-    #                 self.atr.setData(aa)
-    #                 self.atr.setPos(x_atr,0)
-    #                 QtGui.QApplication.processEvents()
-                
-    #     else:
-    #         atr_on = 1
-    #         while a_flag:
-    #             aa[:-1] = aa[1:]
-    #             aa[-1] = data[0]
-    #             x_atr +=0.0001
-    #             self.atr.setData(aa)
-    #             self.atr.setPos(x_atr,0)
-    #             QtGui.QApplication.processEvents()
-
-
-    # def stop_graph_vent(self):
-    #     global v_flag,vtr_on
-    #     vtr_on = 0
-    #     v_flag = 0
-    #     self.vent_graph.plot()
-    #     mySerial.close_serial()
-
-    # def stop_graph_atr(self):
-    #     global a_flag,atr_on
-    #     atr_on = 0
-    #     a_flag = 0
-    #     self.atr_graph.plot()
