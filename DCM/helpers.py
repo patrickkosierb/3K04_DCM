@@ -36,30 +36,21 @@ def update_current(user, current, label):
 			current[i].setText(user[i])	
 
 def load_current():
-	# cur = config.is_current_pm()
-	# try:
 	db = open("data/parameters.txt","r")
 	for line in db:
 		last_line = line
 	last_param = last_line.split(", ")
 	last_param.pop()
 	db.close()
-	# except:
-	# 	db = open("data/PM-ID-"+cur+".txt","w+")
-	# 	db.write("0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, ")
-	# 	db.close()
-	# 	last_param = ['0', '0', '0', '0','0', '0', '0','0', '0', '0', '0','0', '0', '0', '0']
 	return last_param
 
 def update_text(param):
-	# cur = config.is_current_pm()
 	db = open("data/parameters.txt","a")
 	db.write("\n")
 	for val in param:
 		db.write(""+val+", ")
 	db.close()
-
-
+	
 # clears all numbers from combo boxes, goes to first index(parameter name)
 def clear_box(user, label):
 	for i in range(0,len(user)):

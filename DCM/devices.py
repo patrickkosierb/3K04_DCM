@@ -5,8 +5,8 @@ class Device:
 	ports = None
 	def __init__(self):
 		self.check_ports()
-		
-	def check_ports(self):
+
+	def check_ports(self): #checks ports called by constructor
 		self.DeviceIDList = []
 		self.ports = win32com.client.GetObject("winmgmts:")
 		for usb in self.ports.InstancesOf("Win32_USBHub"):
@@ -15,10 +15,10 @@ class Device:
 		if len(self.DeviceIDList) == 0:
 			self.DeviceIDList.append("0")
 
-	def Get_Current_ID(self):
+	def Get_Current_ID(self): #gets id of pacemaker
 		return self.DeviceIDList
 
-	def Get_Past_PMs(self):
+	def Get_Past_PMs(self): #gets history of pms
 		db = open("data/pacemakers.txt","r")
 		IDs = []
 		Names = []
@@ -34,7 +34,7 @@ class Device:
 		return IDs, Names, index
 
 
-	def compare_devices(self):
+	def compare_devices(self): #compares plugged in pm with old ones
 		self.check_ports()
 		current = self.Get_Current_ID()
 		# print(current)
@@ -46,13 +46,13 @@ class Device:
 				return pastNames[i], index[i]
 		return 0, 0
 
-	def add_device(self,name):
+	def add_device(self,name): #adds new pm to text file
 		current = self.Get_Current_ID()[0]
 		db = open("data/pacemakers.txt","a")
 		db.write("\n"+current+', '+name+', '+str(len(self.Get_Past_PMs()[0])+1))
 		db.close()
 
-	def get_PM(self):
+	def get_PM(self): #gets valuable info on pm
 		return self.compare_devices()
 
 		

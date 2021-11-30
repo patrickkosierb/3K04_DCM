@@ -1,11 +1,10 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget
-import sys
-import sqlite3
-import os
+# import sys
+# import sqlite3
+# import os
 import string
-
 import config
 import menu
 import devices

@@ -28,8 +28,6 @@ class main_menu(QDialog): #main menu screen
 	def go_to_modes(self):
 		modes_var = modes.mode()
 		go_to_page(modes_var)
-		# aoo = modes.aoo_mode()
-		# go_to_page(aoo)
 
 	def go_to_welcome(self):
 		welcome_var = welcome.WelcomeScreen()

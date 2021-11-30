@@ -461,7 +461,7 @@ font: 12pt &quot;Arial&quot;;</string>
    <widget class="QLabel" name="conn_error">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>670</x>
       <y>240</y>
       <width>341</width>
       <height>31</height>

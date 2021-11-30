@@ -32,7 +32,6 @@ status = 0
 
 class mode(QDialog):
 	def __init__(self):
-		# get param list from_serial(param)
 		super(mode, self).__init__()
 		loadUi("interface/mode.ui", self)
 
@@ -295,7 +294,6 @@ class aoo_mode(QDialog):
 		self.doo.clicked.connect(self.go_to_doo)
 		self.door.clicked.connect(self.go_to_door)
 		self.Back.clicked.connect(self.go_to_menu)
-		
 		self.ApplyChanges.clicked.connect(self.update_param)
 		self.ResetChanges.clicked.connect(self.current_param) #current_param
 		self.clear.clicked.connect(self.clear_inputs)
@@ -401,23 +399,7 @@ class aoo_mode(QDialog):
 
 	# update the current parameters, apply changes is only for ui, send to pacemaker will actually update pacemaker
 	def update_param(self):
-		# check here?
-		# x = str(self.LRL.currentText())
-		# x2 = self.LRL_Current.text()
-		# y2 = self.URL_Current.text()
-		# y = str(self.URL.currentText())
-		# if(isDigit(x) == True):
-		# 	x = int(x)
-		# 	if(x>int(y2)):
-		# 		print("error1")
-		# 		self.LRL.setCurrentIndex(0)
-		# if(isDigit(y) == True):
-		# 	y = int(y)
-		# 	if(y<int(x2)):
-		# 		print("error2")
-		# 		self.URL.setCurrentIndex(0)
-
-		User = [self.LRL.currentText(), self.URL.currentText(),self.AA.currentText(),self.APW.currentText()];
+		User = [self.LRL.currentText(), self.URL.currentText(),self.AA.currentText(),self.APW.currentText()]
 		Current = [self.LRL_Current, self.URL_Current,self.AA_Current,self.APW_Current] 
 		Label = [self.INVALID, self.INVALID_2, self.INVALID_3, self.INVALID_4]
 		update_current(User, Current, Label)
