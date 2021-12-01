@@ -3,6 +3,11 @@ import struct
 from PyQt5.QtCore import pyqtSignal, QThread
 import copy
 import time
+from datetime import datetime
+import math
+
+a = 0
+v = 0
 
 class serialThreadClass(QThread):
 	
@@ -10,7 +15,7 @@ class serialThreadClass(QThread):
 		super(serialThreadClass, self).__init__()
 		self.ser = serial.Serial()
 		self.ser.baudrate = 115200
-		self.ser.port = "COM7"
+		self.ser.port = "COM6" 
 		self.ser.timeout = 1
 
 	def open_serial(self):
@@ -118,7 +123,6 @@ class serialThreadClass(QThread):
 			else:
 				print("failed to revieve")
 				return 0
-			return 1
 		except:
 			print("PM not found")
 			return 0
@@ -137,14 +141,17 @@ class serialThreadClass(QThread):
 			print("PM not found")
 			return 0
 
-	def get_graph(self):
 
-		data = [[],[]]
+
+	def get_graph(self):
+		global a,v
+		data = [[],[],[]]
 		atr = []
 		vent_d = []
 		ECG_value = [0,0,0,0]
 		packets_to_read = 2
 		for n in range(packets_to_read):
+
 			time.sleep(0.4) 
 			bytesToRead = self.ser.in_waiting
 
@@ -156,13 +163,16 @@ class serialThreadClass(QThread):
 					break
 			
 			if(not readData): #No data received
-				atr=atr+[0]*3
-				vent_d=vent_d+[0]*3
+				atr = atr + [a]*3
+				vent_d = vent_d +[v]*3
+				# atr=atr+[0]*3
+				# vent_d=vent_d+[0]*3
 			else: #Data is received
 				for i in range(6):
-
+	
 					bytesToRead = self.ser.in_waiting
 					if (bytesToRead >= 4):
+
 						ECG_value[0] = self.ser.read()
 						ECG_value[1] = self.ser.read()
 						ECG_value[2] = self.ser.read()
@@ -170,11 +180,23 @@ class serialThreadClass(QThread):
 						omg = ECG_value[0]+ECG_value[1]+ECG_value[2]+ECG_value[3]
 						x = struct.unpack('<f', omg)
 						x = x[0]
-						(atr if (i%2 == 0) else vent_d).append(x)
+						if(i%2==0):
+							atr.append(x)
+							a = x
+						else:
+							vent_d.append(x)
+							v = x
+						# (atr if (i%2 == 0) else vent_d).append(x)
 					else:
-						(atr if (i%2 == 0) else vent_d).append(float(0))
+						dt = abs(t2-t1)
+						if(i%2==0):
+							atr.append(a)
+						else:
+							vent_d.append(v)
+						# (atr if (i%2 == 0) else vent_d).append(float(0))
 			data[0]= data[0] +atr
 			data[1]= data[1] +vent_d
+
 		# print("Data from get_graph: [AA, VA]: ",data)
 		return data
 

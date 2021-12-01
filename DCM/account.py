@@ -1,6 +1,6 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget, QInputDialog
 # import sys
 # import sqlite3
 # import os
@@ -18,14 +18,31 @@ class account_page(QDialog):
         super(account_page, self).__init__()
         loadUi("interface/account_page.ui", self)
         self.username.setText(config.is_current_user())
-        name = myDevice.get_PM()[0]
-        self.pm_no.setText(name)
-       	self.pm_id.setText(myDevice.Get_Current_ID()[0])
+        # name = str(myDevice.get_PM()[0])
+        # self.pm_no.setText(name)
+       	# self.pm_id.setText(myDevice.Get_Current_ID()[0])
+        self.update_patient()
+
         self.password.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.password_confirm.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.changes.clicked.connect(self.change_username)
         self.back.clicked.connect(self.go_to_menu)
 
+    def update_patient(self):
+        if(myDevice.get_PM()[0]==0):
+            print("Not a past device.")
+            text, result = QInputDialog.getText(self,"New PM", "Enter new patient's name:")
+            if(result == True):
+                myDevice.add_device(str(text))
+                cur = myDevice.get_PM()
+                self.pm_no.setText(str(cur[0]))
+                self.pm_id.setText(myDevice.Get_Current_ID()[0])
+                config.current_pm(cur[1])
+        else:
+            cur = myDevice.get_PM()
+            self.pm_no.setText(str(cur[0]))
+            self.pm_id.setText(myDevice.Get_Current_ID()[0])
+            config.current_pm(cur[1])
 
     def go_to_menu(self):
         menu_var = menu.main_menu()

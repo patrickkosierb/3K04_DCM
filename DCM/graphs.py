@@ -71,6 +71,8 @@ class graphs_page(QDialog):
             else:
                 if(not mySerial.isopen()):
                     mySerial.open_serial()
+                mySerial.close_serial()
+                mySerial.open_serial()
                 self.connected.setText("Connected")
                 self.disconnected.setText("")
             config.current_pm(cur[1])
@@ -127,9 +129,10 @@ class graphs_page(QDialog):
         if(mySerial.start_3()):
             fig = plt.figure()
             ani = FuncAnimation(fig,func=self.animate, interval=1000)
-            
             plt.show()
-            print("vent")  
+            
+
+
 
     def plot_freeze(self):
         mySerial.stop_graph()
@@ -146,4 +149,5 @@ class graphs_page(QDialog):
         xv = [0]
         aa = [0]
         xa = [0]
+
 

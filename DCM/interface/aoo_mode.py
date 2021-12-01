@@ -40,6 +40,7 @@ class Ui_Dialog(object):
         self.disconnected.setGeometry(QtCore.QRect(950, 30, 241, 51))
         self.disconnected.setStyleSheet("font: 14pt \"Arial\"; color:rgb(255, 0, 0)\n"
 "")
+        self.disconnected.setText("")
         self.disconnected.setObjectName("disconnected")
         self.pacemaker_number = QtWidgets.QLabel(self.bgwidget)
         self.pacemaker_number.setGeometry(QtCore.QRect(10, 40, 241, 51))
@@ -106,7 +107,7 @@ class Ui_Dialog(object):
         self.checkBox.setStyleSheet("color: rgb(255,255,255)")
         self.checkBox.setObjectName("checkBox")
         self.aai = QtWidgets.QPushButton(self.bgwidget)
-        self.aai.setGeometry(QtCore.QRect(15, 240, 351, 51))
+        self.aai.setGeometry(QtCore.QRect(10, 222, 351, 41))
         self.aai.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
 "background-color: rgb(255, 255, 216);\n"
@@ -133,7 +134,7 @@ class Ui_Dialog(object):
 "font: 12pt \"MS Shell Dlg 2\";")
         self.APW_Current.setObjectName("APW_Current")
         self.aoo = QtWidgets.QPushButton(self.bgwidget)
-        self.aoo.setGeometry(QtCore.QRect(15, 140, 351, 51))
+        self.aoo.setGeometry(QtCore.QRect(10, 166, 351, 41))
         self.aoo.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
 "background-color: rgb(0, 255, 150);\n"
@@ -162,14 +163,14 @@ class Ui_Dialog(object):
 "font: 75 12pt \"Arial\";")
         self.account.setObjectName("account")
         self.voo = QtWidgets.QPushButton(self.bgwidget)
-        self.voo.setGeometry(QtCore.QRect(15, 340, 351, 51))
+        self.voo.setGeometry(QtCore.QRect(10, 390, 351, 41))
         self.voo.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
 "background-color: rgb(255, 255, 216);\n"
 "font: 12pt \"Arial\";")
         self.voo.setObjectName("voo")
         self.vvi = QtWidgets.QPushButton(self.bgwidget)
-        self.vvi.setGeometry(QtCore.QRect(15, 440, 351, 51))
+        self.vvi.setGeometry(QtCore.QRect(10, 446, 351, 41))
         self.vvi.setStyleSheet("border-radius: 20px;\n"
 "color: rgb(0,0,0);\n"
 "background-color: rgb(255, 255, 216);\n"
@@ -358,6 +359,7 @@ class Ui_Dialog(object):
         self.AA.addItem("")
         self.AA.addItem("")
         self.AA.addItem("")
+        self.AA.addItem("")
         self.APW = QtWidgets.QComboBox(self.bgwidget)
         self.APW.setGeometry(QtCore.QRect(1050, 435, 73, 22))
         self.APW.setObjectName("APW")
@@ -372,6 +374,66 @@ class Ui_Dialog(object):
 "background-color: rgb(255, 255, 255);\n"
 "font: 75 10pt \"Arial\";")
         self.clear.setObjectName("clear")
+        self.aoor = QtWidgets.QPushButton(self.bgwidget)
+        self.aoor.setGeometry(QtCore.QRect(10, 278, 351, 41))
+        self.aoor.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.aoor.setObjectName("aoor")
+        self.voor = QtWidgets.QPushButton(self.bgwidget)
+        self.voor.setGeometry(QtCore.QRect(10, 502, 351, 41))
+        self.voor.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.voor.setObjectName("voor")
+        self.aair = QtWidgets.QPushButton(self.bgwidget)
+        self.aair.setGeometry(QtCore.QRect(10, 334, 351, 41))
+        self.aair.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.aair.setObjectName("aair")
+        self.vvir = QtWidgets.QPushButton(self.bgwidget)
+        self.vvir.setGeometry(QtCore.QRect(10, 558, 351, 41))
+        self.vvir.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.vvir.setObjectName("vvir")
+        self.door = QtWidgets.QPushButton(self.bgwidget)
+        self.door.setGeometry(QtCore.QRect(10, 614, 351, 41))
+        self.door.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.door.setObjectName("door")
+        self.doo = QtWidgets.QPushButton(self.bgwidget)
+        self.doo.setGeometry(QtCore.QRect(10, 670, 351, 41))
+        self.doo.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.doo.setObjectName("doo")
+        self.refresh = QtWidgets.QPushButton(self.bgwidget)
+        self.refresh.setGeometry(QtCore.QRect(1100, 40, 93, 28))
+        self.refresh.setStyleSheet("background-color: rgb(255, 255, 216);\n"
+"border-radius: 5px;")
+        self.refresh.setObjectName("refresh")
+        self.conn_error = QtWidgets.QLabel(self.bgwidget)
+        self.conn_error.setGeometry(QtCore.QRect(950, 70, 191, 31))
+        self.conn_error.setStyleSheet("font: 8pt \"Arial\"; color:rgb(255, 0, 0)\n"
+"")
+        self.conn_error.setText("")
+        self.conn_error.setObjectName("conn_error")
+        self.no_pacing = QtWidgets.QPushButton(self.bgwidget)
+        self.no_pacing.setGeometry(QtCore.QRect(10, 110, 351, 41))
+        self.no_pacing.setStyleSheet("border-radius: 20px;\n"
+"color: rgb(0,0,0);\n"
+"background-color: rgb(255, 255, 216);\n"
+"font: 12pt \"Arial\";")
+        self.no_pacing.setObjectName("no_pacing")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -381,7 +443,6 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "Atrium Pacing Mode(AOO)"))
         self.label_2.setText(_translate("Dialog", "Mode Parameters:"))
-        self.disconnected.setText(_translate("Dialog", "Disconnected"))
         self.label_6.setText(_translate("Dialog", "Lower Rate Limit (ppm)"))
         self.label_7.setText(_translate("Dialog", "Upper Rate Limit (ppm)"))
         self.label_8.setText(_translate("Dialog", "Atrial Amplitude (V)"))
@@ -492,46 +553,55 @@ class Ui_Dialog(object):
         self.URL.setItemText(25, _translate("Dialog", "170"))
         self.URL.setItemText(26, _translate("Dialog", "175"))
         self.AA.setItemText(0, _translate("Dialog", "AA"))
-        self.AA.setItemText(1, _translate("Dialog", "0.5"))
-        self.AA.setItemText(2, _translate("Dialog", "0.6"))
-        self.AA.setItemText(3, _translate("Dialog", "0.7"))
-        self.AA.setItemText(4, _translate("Dialog", "0.8"))
-        self.AA.setItemText(5, _translate("Dialog", "0.9"))
-        self.AA.setItemText(6, _translate("Dialog", "1.0"))
-        self.AA.setItemText(7, _translate("Dialog", "1.1"))
-        self.AA.setItemText(8, _translate("Dialog", "1.2"))
-        self.AA.setItemText(9, _translate("Dialog", "1.3"))
-        self.AA.setItemText(10, _translate("Dialog", "1.4"))
-        self.AA.setItemText(11, _translate("Dialog", "1.5"))
-        self.AA.setItemText(12, _translate("Dialog", "1.6"))
-        self.AA.setItemText(13, _translate("Dialog", "1.7"))
-        self.AA.setItemText(14, _translate("Dialog", "1.8"))
-        self.AA.setItemText(15, _translate("Dialog", "1.9"))
-        self.AA.setItemText(16, _translate("Dialog", "2.0"))
-        self.AA.setItemText(17, _translate("Dialog", "2.1"))
-        self.AA.setItemText(18, _translate("Dialog", "2.2"))
-        self.AA.setItemText(19, _translate("Dialog", "2.3"))
-        self.AA.setItemText(20, _translate("Dialog", "2.4"))
-        self.AA.setItemText(21, _translate("Dialog", "2.5"))
-        self.AA.setItemText(22, _translate("Dialog", "2.6"))
-        self.AA.setItemText(23, _translate("Dialog", "2.7"))
-        self.AA.setItemText(24, _translate("Dialog", "2.8"))
-        self.AA.setItemText(25, _translate("Dialog", "2.9"))
-        self.AA.setItemText(26, _translate("Dialog", "3.0"))
-        self.AA.setItemText(27, _translate("Dialog", "3.1"))
-        self.AA.setItemText(28, _translate("Dialog", "3.2"))
-        self.AA.setItemText(29, _translate("Dialog", "3.5"))
-        self.AA.setItemText(30, _translate("Dialog", "4.0"))
-        self.AA.setItemText(31, _translate("Dialog", "4.5"))
-        self.AA.setItemText(32, _translate("Dialog", "5.0"))
-        self.AA.setItemText(33, _translate("Dialog", "5.5"))
-        self.AA.setItemText(34, _translate("Dialog", "6.0"))
-        self.AA.setItemText(35, _translate("Dialog", "6.5"))
-        self.AA.setItemText(36, _translate("Dialog", "7.0"))
+        self.AA.setItemText(1, _translate("Dialog", "0.0"))
+        self.AA.setItemText(2, _translate("Dialog", "0.5"))
+        self.AA.setItemText(3, _translate("Dialog", "0.6"))
+        self.AA.setItemText(4, _translate("Dialog", "0.7"))
+        self.AA.setItemText(5, _translate("Dialog", "0.8"))
+        self.AA.setItemText(6, _translate("Dialog", "0.9"))
+        self.AA.setItemText(7, _translate("Dialog", "1.0"))
+        self.AA.setItemText(8, _translate("Dialog", "1.1"))
+        self.AA.setItemText(9, _translate("Dialog", "1.2"))
+        self.AA.setItemText(10, _translate("Dialog", "1.3"))
+        self.AA.setItemText(11, _translate("Dialog", "1.4"))
+        self.AA.setItemText(12, _translate("Dialog", "1.5"))
+        self.AA.setItemText(13, _translate("Dialog", "1.6"))
+        self.AA.setItemText(14, _translate("Dialog", "1.7"))
+        self.AA.setItemText(15, _translate("Dialog", "1.8"))
+        self.AA.setItemText(16, _translate("Dialog", "1.9"))
+        self.AA.setItemText(17, _translate("Dialog", "2.0"))
+        self.AA.setItemText(18, _translate("Dialog", "2.1"))
+        self.AA.setItemText(19, _translate("Dialog", "2.2"))
+        self.AA.setItemText(20, _translate("Dialog", "2.3"))
+        self.AA.setItemText(21, _translate("Dialog", "2.4"))
+        self.AA.setItemText(22, _translate("Dialog", "2.5"))
+        self.AA.setItemText(23, _translate("Dialog", "2.6"))
+        self.AA.setItemText(24, _translate("Dialog", "2.7"))
+        self.AA.setItemText(25, _translate("Dialog", "2.8"))
+        self.AA.setItemText(26, _translate("Dialog", "2.9"))
+        self.AA.setItemText(27, _translate("Dialog", "3.0"))
+        self.AA.setItemText(28, _translate("Dialog", "3.1"))
+        self.AA.setItemText(29, _translate("Dialog", "3.2"))
+        self.AA.setItemText(30, _translate("Dialog", "3.5"))
+        self.AA.setItemText(31, _translate("Dialog", "4.0"))
+        self.AA.setItemText(32, _translate("Dialog", "4.5"))
+        self.AA.setItemText(33, _translate("Dialog", "5.0"))
+        self.AA.setItemText(34, _translate("Dialog", "5.5"))
+        self.AA.setItemText(35, _translate("Dialog", "6.0"))
+        self.AA.setItemText(36, _translate("Dialog", "6.5"))
+        self.AA.setItemText(37, _translate("Dialog", "7.0"))
         self.APW.setItemText(0, _translate("Dialog", "APW"))
-        self.APW.setItemText(1, _translate("Dialog", "1.0"))
-        self.APW.setItemText(2, _translate("Dialog", "2.0"))
+        self.APW.setItemText(1, _translate("Dialog", "1"))
+        self.APW.setItemText(2, _translate("Dialog", "2"))
         self.clear.setText(_translate("Dialog", "Clear Inputs"))
+        self.aoor.setText(_translate("Dialog", "AOOR Mode"))
+        self.voor.setText(_translate("Dialog", "VOOR Mode"))
+        self.aair.setText(_translate("Dialog", "AAIR Mode"))
+        self.vvir.setText(_translate("Dialog", "VVIR Mode"))
+        self.door.setText(_translate("Dialog", "DOOR Mode"))
+        self.doo.setText(_translate("Dialog", "DOO Mode"))
+        self.refresh.setText(_translate("Dialog", "Sync Up"))
+        self.no_pacing.setText(_translate("Dialog", "No Pacing"))
 
 
 if __name__ == "__main__":

@@ -446,8 +446,7 @@ class aoo_mode(QDialog):
 				status = 1
 				self.connected.setText("Connected")
 				self.disconnected.setText("")
-				self.conn_error.setText("")
-				print(last_param)	
+
 			else:
 				status = 0
 				self.conn_error.setText("Check Connection")
