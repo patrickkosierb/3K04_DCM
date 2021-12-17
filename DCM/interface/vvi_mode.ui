@@ -116,7 +116,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>200</y>
-      <width>161</width>
+      <width>261</width>
       <height>41</height>
      </rect>
     </property>
@@ -125,7 +125,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Lower Rate Limit</string>
+     <string>Lower Rate Limit (ppm)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_7">
@@ -133,7 +133,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>275</y>
-      <width>151</width>
+      <width>271</width>
       <height>51</height>
      </rect>
     </property>
@@ -142,7 +142,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Upper Rate Limit</string>
+     <string>Upper Rate Limit (ppm)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_8">
@@ -150,7 +150,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>350</y>
-      <width>171</width>
+      <width>331</width>
       <height>41</height>
      </rect>
     </property>
@@ -159,7 +159,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Ventricle Amplitude</string>
+     <string>Ventricle Amplitude (V)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">
@@ -167,7 +167,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>425</y>
-      <width>191</width>
+      <width>321</width>
       <height>41</height>
      </rect>
     </property>
@@ -176,32 +176,15 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Ventricle Pulse Width</string>
+     <string>Ventricle Pulse Width (ms)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_10">
     <property name="geometry">
      <rect>
       <x>430</x>
-      <y>575</y>
-      <width>241</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
-</string>
-    </property>
-    <property name="text">
-     <string>Ventricle Refractory Period</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_11">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
       <y>500</y>
-      <width>171</width>
+      <width>301</width>
       <height>41</height>
      </rect>
     </property>
@@ -210,24 +193,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Ventricle Sensitivity</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_12">
-    <property name="geometry">
-     <rect>
-      <x>430</x>
-      <y>640</y>
-      <width>371</width>
-      <height>61</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
-</string>
-    </property>
-    <property name="text">
-     <string>Post Ventricle Atrial Refractory Period</string>
+     <string>Ventricle Refractory Period (ms)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -347,10 +313,10 @@ font: 12pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="aai">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>240</y>
+      <x>10</x>
+      <y>222</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -397,7 +363,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="VV_Current">
+   <widget class="QLabel" name="VA_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -431,7 +397,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="VS_Current">
+   <widget class="QLabel" name="VRP_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -448,47 +414,13 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="VRP_Current">
-    <property name="geometry">
-     <rect>
-      <x>840</x>
-      <y>585</y>
-      <width>71</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255,255,255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
-   <widget class="QLabel" name="PVARP_Current">
-    <property name="geometry">
-     <rect>
-      <x>840</x>
-      <y>660</y>
-      <width>71</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255,255,255);
-font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
-    </property>
-    <property name="text">
-     <string>0</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="aoo">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>140</y>
+      <x>10</x>
+      <y>166</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -561,10 +493,10 @@ font: 75 12pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="voo">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>340</y>
+      <x>10</x>
+      <y>390</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -580,10 +512,10 @@ font: 12pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="vvi">
     <property name="geometry">
      <rect>
-      <x>15</x>
-      <y>440</y>
+      <x>10</x>
+      <y>446</y>
       <width>351</width>
-      <height>51</height>
+      <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -594,76 +526,6 @@ font: 12pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string>VVI Mode</string>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="LRL">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>210</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="URL">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>285</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="VV">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>360</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="VPW">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>435</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="VS">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>510</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="VRP">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>585</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLineEdit" name="PVARP">
-    <property name="geometry">
-     <rect>
-      <x>1050</x>
-      <y>660</y>
-      <width>51</width>
-      <height>22</height>
-     </rect>
     </property>
    </widget>
    <widget class="QLabel" name="INVALID">
@@ -738,41 +600,7 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>510</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="INVALID_6">
-    <property name="geometry">
-     <rect>
-      <x>960</x>
-      <y>585</y>
-      <width>81</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
-</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="INVALID_7">
-    <property name="geometry">
-     <rect>
-      <x>960</x>
-      <y>660</y>
+      <y>505</y>
       <width>81</width>
       <height>31</height>
      </rect>
@@ -851,6 +679,1073 @@ font: 12pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string> Back to Main Menu</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="LRL">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>210</y>
+      <width>71</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>LRL</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>30</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>35</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>40</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>45</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>51</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>52</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>53</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>54</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>55</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>56</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>57</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>58</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>59</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>60</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>61</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>62</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>63</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>64</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>65</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>67</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>68</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>69</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>70</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>71</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>72</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>73</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>74</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>75</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>76</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>77</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>78</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>79</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>80</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>81</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>82</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>83</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>84</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>85</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>86</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>87</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>88</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>89</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>90</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>95</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>105</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>110</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>115</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>120</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>125</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>130</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>135</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>140</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>145</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>150</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>155</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>160</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>165</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>170</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>175</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="URL">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>285</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>URL</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>50</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>55</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>60</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>65</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>70</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>75</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>80</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>85</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>90</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>95</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>100</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>105</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>110</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>115</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>120</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>125</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>130</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>135</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>140</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>145</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>150</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>155</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>160</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>165</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>170</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>175</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="VA">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>360</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>VA</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>7.0</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="VPW">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>435</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>VPW</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="VRP">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>510</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>VRP</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>150</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>160</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>170</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>180</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>190</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>200</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>210</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>220</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>230</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>240</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>250</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>260</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>270</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>280</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>290</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>300</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>310</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>320</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>330</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>340</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>350</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>360</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>370</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>380</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>390</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>400</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>410</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>420</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>430</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>440</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>450</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>460</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>470</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>480</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>490</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>500</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="clear">
+    <property name="geometry">
+     <rect>
+      <x>975</x>
+      <y>705</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 10px;
+
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 255);
+font: 75 10pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Clear Inputs</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aoor">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>278</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>AOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aair">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>334</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>AAIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="voor">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>502</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>VOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vvir">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>558</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>VVIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="door">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>614</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>DOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="doo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>670</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>DOO Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="no_pacing">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>110</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>No Pacing</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="refresh">
+    <property name="geometry">
+     <rect>
+      <x>1100</x>
+      <y>40</y>
+      <width>93</width>
+      <height>28</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(255, 255, 216);
+border-radius: 5px;</string>
+    </property>
+    <property name="text">
+     <string>Sync Up</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="conn_error">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>70</y>
+      <width>191</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
+    </property>
+    <property name="text">
+     <string/>
     </property>
    </widget>
   </widget>
