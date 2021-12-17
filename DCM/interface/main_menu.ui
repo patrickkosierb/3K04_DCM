@@ -71,7 +71,7 @@ font: 20pt &quot;Arial&quot;;</string>
      <string>Modes</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="modes_2">
+   <widget class="QPushButton" name="graphs">
     <property name="geometry">
      <rect>
       <x>420</x>
@@ -153,6 +153,23 @@ font: 20pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string>Logout</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label2_10">
+    <property name="geometry">
+     <rect>
+      <x>1080</x>
+      <y>790</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>DCM Version 1.2</string>
     </property>
    </widget>
   </widget>

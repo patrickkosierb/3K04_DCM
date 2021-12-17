@@ -1,12 +1,16 @@
 # @ file: config.py
 # @ brief: holds global variables 
-
+import sys
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QStackedWidget	
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget	
 
 def init():
 	global widget
 	widget = QtWidgets.QStackedWidget()
+	
+def close():
+	global app
+	sys.exit(app.exec_())
 
 def current_user(user):
 	global active_user

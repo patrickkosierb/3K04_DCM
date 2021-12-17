@@ -3,8 +3,6 @@
 
 import sys
 import os
-import string
-
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget	

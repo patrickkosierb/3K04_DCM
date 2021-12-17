@@ -1,26 +1,48 @@
 from PyQt5.uic import loadUi
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget
-import sys
-import sqlite3
-import os
+from PyQt5.QtWidgets import QApplication, QMainWindow, QDialog, QWidget, QStackedWidget, QInputDialog
+# import sys
+# import sqlite3
+# import os
 import string
-
 import config
 import menu
+import devices
 from helpers import go_to_page
 
-class account_page(QDialog): #main menu screen
+myDevice = devices.Device()
+
+# change to about
+class account_page(QDialog): 
     def __init__(self):
         super(account_page, self).__init__()
         loadUi("interface/account_page.ui", self)
         self.username.setText(config.is_current_user())
-        self.pm_no.setText(config.is_current_pm())
+        # name = str(myDevice.get_PM()[0])
+        # self.pm_no.setText(name)
+       	# self.pm_id.setText(myDevice.Get_Current_ID()[0])
+        self.update_patient()
+
         self.password.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.password_confirm.setEchoMode(QtWidgets.QLineEdit.Password) 
         self.changes.clicked.connect(self.change_username)
         self.back.clicked.connect(self.go_to_menu)
 
+    def update_patient(self):
+        if(myDevice.get_PM()[0]==0):
+            print("Not a past device.")
+            text, result = QInputDialog.getText(self,"New PM", "Enter new patient's name:")
+            if(result == True):
+                myDevice.add_device(str(text))
+                cur = myDevice.get_PM()
+                self.pm_no.setText(str(cur[0]))
+                self.pm_id.setText(myDevice.Get_Current_ID()[0])
+                config.current_pm(cur[1])
+        else:
+            cur = myDevice.get_PM()
+            self.pm_no.setText(str(cur[0]))
+            self.pm_id.setText(myDevice.Get_Current_ID()[0])
+            config.current_pm(cur[1])
 
     def go_to_menu(self):
         menu_var = menu.main_menu()
@@ -50,7 +72,8 @@ class account_page(QDialog): #main menu screen
 	    	else:
 	    		db = open("data/users.txt",'r')
 	    		lines = db.readlines()
-	    		lines[int(config.is_line())-1] = new_user+", "+config.is_password()+", "+str(config.is_line())
+
+	    		lines[int(config.is_line())-1] = new_user+", "+config.is_password()+", "+str(config.is_line())+'\n'
 	    		config.current_user(new_user)
 	    		db = open("data/users.txt","w")
 	    		db.writelines(lines)
