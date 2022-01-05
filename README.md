@@ -14,4 +14,4 @@
 
 ### PACEMAKER
 
-##### Open Pacemkaer.slx using Simulink 
+##### Open Pacemaker.slx using Simulink 
