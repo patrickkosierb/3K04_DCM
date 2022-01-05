@@ -31,7 +31,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>420</x>
       <y>0</y>
-      <width>511</width>
+      <width>481</width>
       <height>111</height>
      </rect>
     </property>
@@ -40,7 +40,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Ventricle Pacing Mode(VOO)</string>
+     <string>Dual Pacing Mode(DOO)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_2">
@@ -116,7 +116,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>200</y>
-      <width>291</width>
+      <width>231</width>
       <height>41</height>
      </rect>
     </property>
@@ -133,7 +133,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>275</y>
-      <width>221</width>
+      <width>211</width>
       <height>51</height>
      </rect>
     </property>
@@ -150,7 +150,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>350</y>
-      <width>241</width>
+      <width>261</width>
       <height>41</height>
      </rect>
     </property>
@@ -159,7 +159,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Ventricle Amplitude (V)</string>
+     <string>Atrial Amplitude (V)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_9">
@@ -167,7 +167,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
      <rect>
       <x>430</x>
       <y>425</y>
-      <width>291</width>
+      <width>211</width>
       <height>41</height>
      </rect>
     </property>
@@ -176,7 +176,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0.5, x2:1, y2:0.5, stop:0 
 </string>
     </property>
     <property name="text">
-     <string>Ventricle Pulse Width (ms)</string>
+     <string>Atrial Pulse Width (ms)</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_13">
@@ -346,7 +346,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="VA_Current">
+   <widget class="QLabel" name="AA_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -363,7 +363,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
      <string>0</string>
     </property>
    </widget>
-   <widget class="QLabel" name="VPW_Current">
+   <widget class="QLabel" name="APW_Current">
     <property name="geometry">
      <rect>
       <x>840</x>
@@ -392,6 +392,7 @@ font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
 color: rgb(0,0,0);
+
 background-color: rgb(255, 255, 216);
 font: 12pt &quot;Arial&quot;;</string>
     </property>
@@ -468,7 +469,7 @@ font: 75 12pt &quot;Arial&quot;;</string>
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
 color: rgb(0,0,0);
-background-color: rgb(0, 255, 150);
+background-color: rgb(255, 255, 216);
 font: 12pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
@@ -1090,11 +1091,439 @@ font: 12pt &quot;Arial&quot;;</string>
      </property>
     </item>
    </widget>
-   <widget class="QComboBox" name="VA">
+   <widget class="QComboBox" name="AA">
     <property name="geometry">
      <rect>
       <x>1050</x>
       <y>360</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>AA</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>0.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.3</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.4</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.6</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.7</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.8</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2.9</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.2</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>3.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>4.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>5.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6.0</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>6.5</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>7.0</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QComboBox" name="APW">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>435</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>APW</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>1</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>2</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QPushButton" name="clear">
+    <property name="geometry">
+     <rect>
+      <x>975</x>
+      <y>705</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 10px;
+
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 255);
+font: 75 10pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>Clear Inputs</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aoor">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>278</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>AOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="voor">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>502</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>VOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="aair">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>334</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>AAIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="vvir">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>558</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>VVIR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="door">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>614</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(255, 255, 216);
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>DOOR Mode</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="doo">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>670</y>
+      <width>351</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-radius: 20px;
+color: rgb(0,0,0);
+background-color: rgb(0, 255, 150);
+
+font: 12pt &quot;Arial&quot;;</string>
+    </property>
+    <property name="text">
+     <string>DOO Mode</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>500</y>
+      <width>241</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Ventricle Amplitude (V)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>575</y>
+      <width>291</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>Ventricle Pulse Width (ms)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="VA_Current">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>510</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255,255,255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="VPW_Current">
+    <property name="geometry">
+     <rect>
+      <x>840</x>
+      <y>590</y>
+      <width>71</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: rgb(255,255,255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
+    </property>
+    <property name="text">
+     <string>0</string>
+    </property>
+   </widget>
+   <widget class="QComboBox" name="VA">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>510</y>
       <width>73</width>
       <height>22</height>
      </rect>
@@ -1294,7 +1723,7 @@ font: 12pt &quot;Arial&quot;;</string>
     <property name="geometry">
      <rect>
       <x>1050</x>
-      <y>435</y>
+      <y>590</y>
       <width>73</width>
       <height>22</height>
      </rect>
@@ -1315,138 +1744,224 @@ font: 12pt &quot;Arial&quot;;</string>
      </property>
     </item>
    </widget>
-   <widget class="QPushButton" name="clear">
+   <widget class="QLabel" name="label_12">
     <property name="geometry">
      <rect>
-      <x>975</x>
-      <y>705</y>
-      <width>201</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 10px;
-
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 255);
-font: 75 10pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>Clear Inputs</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="aoor">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>278</y>
-      <width>351</width>
+      <x>430</x>
+      <y>650</y>
+      <width>291</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
+     <string notr="true">font: 12pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
     </property>
     <property name="text">
-     <string>AOOR Mode</string>
+     <string>Fixed AV Delay (ms)</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="aair">
+   <widget class="QLabel" name="FAVD_Current">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>334</y>
-      <width>351</width>
-      <height>41</height>
+      <x>840</x>
+      <y>660</y>
+      <width>71</width>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
+     <string notr="true">color: rgb(255,255,255);
+font: 12pt &quot;MS Shell Dlg 2&quot;;</string>
     </property>
     <property name="text">
-     <string>AAIR Mode</string>
+     <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="voor">
+   <widget class="QComboBox" name="FAVD">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>502</y>
-      <width>351</width>
-      <height>41</height>
+      <x>1050</x>
+      <y>660</y>
+      <width>73</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <item>
+     <property name="text">
+      <string>FAVD</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>70</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>80</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>90</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>100</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>110</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>120</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>130</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>140</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>150</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>160</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>170</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>180</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>190</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>200</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>210</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>220</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>230</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>240</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>250</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>260</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>270</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>280</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>290</string>
+     </property>
+    </item>
+    <item>
+     <property name="text">
+      <string>300</string>
+     </property>
+    </item>
+   </widget>
+   <widget class="QLabel" name="INVALID_6">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>510</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
     </property>
     <property name="text">
-     <string>VOOR Mode</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="vvir">
+   <widget class="QLabel" name="INVALID_7">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>558</y>
-      <width>351</width>
-      <height>41</height>
+      <x>960</x>
+      <y>590</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
     </property>
     <property name="text">
-     <string>VVIR Mode</string>
+     <string/>
     </property>
    </widget>
-   <widget class="QPushButton" name="door">
+   <widget class="QLabel" name="INVALID_8">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>614</y>
-      <width>351</width>
-      <height>41</height>
+      <x>960</x>
+      <y>660</y>
+      <width>81</width>
+      <height>31</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
+     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 0, 0)
+</string>
     </property>
     <property name="text">
-     <string>DOOR Mode</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="doo">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>670</y>
-      <width>351</width>
-      <height>41</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">border-radius: 20px;
-color: rgb(0,0,0);
-background-color: rgb(255, 255, 216);
-font: 12pt &quot;Arial&quot;;</string>
-    </property>
-    <property name="text">
-     <string>DOO Mode</string>
+     <string/>
     </property>
    </widget>
    <widget class="QPushButton" name="no_pacing">

@@ -17,9 +17,9 @@
    <property name="geometry">
     <rect>
      <x>-10</x>
-     <y>10</y>
-     <width>1200</width>
-     <height>800</height>
+     <y>-20</y>
+     <width>1431</width>
+     <height>901</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -29,7 +29,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba
    <widget class="QLabel" name="label">
     <property name="geometry">
      <rect>
-      <x>460</x>
+      <x>500</x>
       <y>40</y>
       <width>261</width>
       <height>111</height>
@@ -46,7 +46,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba
    <widget class="QLabel" name="label_2">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>320</x>
       <y>140</y>
       <width>631</width>
       <height>111</height>
@@ -63,7 +63,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba
    <widget class="QPushButton" name="login">
     <property name="geometry">
      <rect>
-      <x>480</x>
+      <x>520</x>
       <y>430</y>
       <width>161</width>
       <height>51</height>
@@ -72,7 +72,7 @@ background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
 color: rgb(0,0,0);
-background-color: rgb(255, 216, 216);
+background-color: rgb(255, 255, 216);
 font: 16pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
@@ -82,7 +82,7 @@ font: 16pt &quot;Arial&quot;;</string>
    <widget class="QPushButton" name="newuser">
     <property name="geometry">
      <rect>
-      <x>430</x>
+      <x>470</x>
       <y>500</y>
       <width>261</width>
       <height>51</height>
@@ -91,7 +91,7 @@ font: 16pt &quot;Arial&quot;;</string>
     <property name="styleSheet">
      <string notr="true">border-radius: 20px;
 color: rgb(0,0,0);
-background-color: rgb(255, 216, 216);
+background-color: rgb(0, 150, 255);
 font: 16pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
@@ -101,7 +101,7 @@ font: 16pt &quot;Arial&quot;;</string>
    <widget class="QLineEdit" name="username">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>490</x>
       <y>260</y>
       <width>231</width>
       <height>41</height>
@@ -115,7 +115,7 @@ font: 16pt &quot;Arial&quot;;</string>
    <widget class="QLineEdit" name="password">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>490</x>
       <y>350</y>
       <width>231</width>
       <height>41</height>
@@ -128,14 +128,14 @@ font: 16pt &quot;Arial&quot;;</string>
    <widget class="QLabel" name="label_3">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>490</x>
       <y>220</y>
       <width>451</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
 </string>
     </property>
     <property name="text">
@@ -145,14 +145,14 @@ font: 16pt &quot;Arial&quot;;</string>
    <widget class="QLabel" name="label_4">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>490</x>
       <y>310</y>
       <width>451</width>
       <height>41</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">font: 8pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
 </string>
     </property>
     <property name="text">
@@ -162,7 +162,7 @@ font: 16pt &quot;Arial&quot;;</string>
    <widget class="QLabel" name="invalid_up">
     <property name="geometry">
      <rect>
-      <x>450</x>
+      <x>490</x>
       <y>390</y>
       <width>451</width>
       <height>41</height>
@@ -174,6 +174,23 @@ font: 16pt &quot;Arial&quot;;</string>
     </property>
     <property name="text">
      <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label2_10">
+    <property name="geometry">
+     <rect>
+      <x>1050</x>
+      <y>790</y>
+      <width>181</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">font: 10pt &quot;Arial&quot;; color:rgb(255, 255, 255)
+</string>
+    </property>
+    <property name="text">
+     <string>DCM Version 1.2</string>
     </property>
    </widget>
   </widget>
